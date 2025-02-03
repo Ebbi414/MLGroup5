@@ -11,7 +11,7 @@ Students:
 """
 
 # 1) Import posts from RssArticles_1
-# from RssArticles_1 import posts
+from RssArticles_1 import posts
 import datetime
 
 # Pseudo code: 
