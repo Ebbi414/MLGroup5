@@ -11,7 +11,11 @@ Students:
 """
 
 # 1) Import posts from RssArticles_1
+<<<<<<< HEAD
+# from RssArticles_1 import posts
+=======
 from RssArticles_1 import posts
+>>>>>>> 1c08c52a3ffb8e89fda0a01ab52c813d9f78dee5
 import datetime
 
 # Pseudo code: 
