@@ -77,7 +77,7 @@ def stemming(sentence):
     return stemSentence.strip()
 
 # (Optional) If you want to apply stemming, uncomment the next line:
-# data_raw['Heading'] = data_raw['Heading'].apply(stemming)
+data_raw['Heading'] = data_raw['Heading'].apply(stemming)
 
 # 4) Split the data
 train, test = train_test_split(data_raw, random_state=42, test_size=0.30, shuffle=True)
