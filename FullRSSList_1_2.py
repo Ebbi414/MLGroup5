@@ -72,5 +72,5 @@ MyTheFinalList = ThefinalList()
 MyTheFinalList = ThefinalList()
 
 #print the final list
-#print(MyTheFinalList)
+print(MyTheFinalList)
 print(len(MyTheFinalList))

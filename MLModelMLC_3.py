@@ -31,6 +31,7 @@ from sklearn.pipeline import Pipeline
 from sklearn.multiclass import OneVsRestClassifier
 from sklearn.metrics import accuracy_score
 from sklearn.linear_model import LogisticRegression
+from sklearn.naive_bayes import MultinomialNB
 
 # If needed for your environment:
 nltk.data.path.append('/usr/local/share/nltk_data')
@@ -95,23 +96,39 @@ x_test = vectorizer.transform(test_text)
 y_test = test.drop(labels = ['Id','Heading'], axis=1)
 
 # 6) Setup ML pipeline
-LogReg_pipeline = Pipeline([
-    ('clf', OneVsRestClassifier(LogisticRegression())),
+# LogReg_pipeline = Pipeline([
+#     ('clf', OneVsRestClassifier(LogisticRegression())),
+# ])
+NB_pipeline = Pipeline([
+    ('clf', OneVsRestClassifier(MultinomialNB())),
 ])
 
 # 7) Hyperparameter Tuning
-C_values = [0.1, 1, 10]
-penalty_values = ['l1', 'l2']
-param_grid = dict(clf__estimator__C=C_values, 
-                  clf__estimator__penalty=penalty_values)
+# C_values = [0.1, 1, 10]
+# penalty_values = ['l1', 'l2']
+# param_grid = dict(clf__estimator__C=C_values, 
+#                   clf__estimator__penalty=penalty_values)
 
-grid = GridSearchCV(LogReg_pipeline, param_grid, cv=5, scoring='accuracy')
+# grid = GridSearchCV(LogReg_pipeline, param_grid, cv=5, scoring='accuracy')
+# grid.fit(x_train, y_train)
+# Define the values for the 'alpha' parameter for MultinomialNB
+alpha_values = [0.1, 0.5, 1.0, 5.0]
+
+# Correctly specify the parameter grid with the proper naming convention
+param_grid = {'clf__estimator__alpha': alpha_values}
+
+# Initialize GridSearchCV with the NB_pipeline (which contains your pipeline)
+grid = GridSearchCV(NB_pipeline, param_grid, cv=5, scoring='accuracy')
+
+# Fit the grid search on your training data
 grid.fit(x_train, y_train)
 
+# Print the best score, parameters, and estimator
 print("Best score: ", grid.best_score_)
 print("Best params: ", grid.best_params_)
 print("Best estimator: ", grid.best_estimator_)
 
+# Optionally, fit the best estimator on the training data (if not already fitted)
 best_clf_pipeline = grid.best_estimator_
 best_clf_pipeline.fit(x_train, y_train)
 
