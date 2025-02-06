@@ -3,30 +3,7 @@
 
 # Import packages/files
 from RssArticles_1 import posts
-
-"""
 import feedparser
-
-# This function can be used if from NEWRssArticles import posts is not desired
-################################ RSS FEED Parser #####################################
-
-RSS_URLS = ['http://www.dn.se/nyheter/m/rss/',
-            'https://rss.aftonbladet.se/rss2/small/pages/sections/senastenytt/', 'https://feeds.expressen.se/nyheter/',
-            'http://www.svd.se/?service=rss', 'http://api.sr.se/api/rss/program/83?format=145',
-            'http://www.svt.se/nyheter/rss.xml'
-              ]
-
-posts = []
-
-for url in RSS_URLS:
-    posts.extend(feedparser.parse(url).entries)
-
-######################################################################################
-
-print(posts)
-
-
-
 
 
 ##################### Extracting the titles and summeries from the dataset ##################
@@ -79,7 +56,7 @@ def PrintDeposit():
 
 printdepositlist = PrintDeposit()
 
-print(printdepositlist)
+#print(printdepositlist)
 
 ######################################################################################
 
@@ -113,20 +90,19 @@ print(printdepositlist)
 #       ...
 #   ]
 #
-# The line below imports that 'posts' object.
+"""
 from RssArticles_1 import posts
 
 
 def OnlyTitlesandSummaries():
-    """
-    This function loops through the global 'posts' and extracts only
-    the 'title' and 'summary' from each item. If a key doesn't exist,
-    it replaces it with an empty string ("").
+    # This function loops through the global 'posts' and extracts only
+    # the 'title' and 'summary' from each item. If a key doesn't exist,
+    # it replaces it with an empty string ("").
     
-    Returns:
-        only_titles_and_summaries (list): A list of dictionaries, where
-        each dictionary has the keys 'title' and 'summary' only.
-    """
+    # Returns:
+    #     only_titles_and_summaries (list): A list of dictionaries, where
+    #     each dictionary has the keys 'title' and 'summary' only.
+    
     # Initialize an empty list that will hold our cleaned dictionaries
     only_titles_and_summaries = []
     

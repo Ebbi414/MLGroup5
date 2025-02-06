@@ -1,60 +1,27 @@
-"""
-FullRSSList_1_2.py
-
-This script takes in articles (posts) from RssArticles_1.py (via `posts`),
-extracts the desired fields (title, summary, link, and published),
-fixes data format issues (like dates), and provides the final list as 'MyTheFinalList'.
-
-Students: 
- - Ensure your 'RssArticles_1.py' is in the same folder (or adjust imports accordingly).
- - Examine how 'posts' is structured, and fix any date format issues carefully.
-"""
-
 # 1) Import posts from RssArticles_1
-<<<<<<< HEAD
 # from RssArticles_1 import posts
-=======
 from RssArticles_1 import posts
->>>>>>> 1c08c52a3ffb8e89fda0a01ab52c813d9f78dee5
 import datetime
-
-# Pseudo code: 
-# - create a function 'gettingNecessaryList' that loops through posts
-# - extract title, summary, link, published
-# - handle errors with try/except if fields are missing
-# - return the collected list
+from datetime import datetime
+import pandas as pd
+import feedparser
 
 def gettingNecessaryList():
-    """
-    This function loops through 'posts' and extracts:
-      title, summary, link, published
-    Then stores them in a dictionary, finally returns a list of these dictionaries.
-    """
-    # Pseudo code:
-    #  1. Initialize an empty list (allitems)
-    #  2. Loop through each 'post' in 'posts'
-    #  3. Create a temp dict for each 'post'
-    #  4. Extract needed keys; if missing, set to empty string
-    #  5. Append the dict to the list
-    #  6. Return allitems
-    
+        
     allitems = []
     
-    # TODO: Replace with your actual code, e.g.:
-    # for x in posts:
-    #     try:
-    #         tempdict = {}
-    #         tempdict["title"] = x["title"]
-    #         tempdict["summary"] = x["summary"]
-    #         ...
-    #     except:
-    #         ...
-    #     ...
+    #TODO: Replace with your actual code, e.g.:
+    for x in posts:
+        tempdict = {}
+        tempdict["title"] = x.get("title", "")
+        tempdict["summary"] = x.get("summary", "")
+        tempdict["link"] = x.get("link", "")
+        tempdict["published"] = x.get("published", "")
+        allitems.append(tempdict)
     
     return allitems
 
-
-# 2) Store the list of extracted items
+#Store the list
 AllItemsX = gettingNecessaryList()
 
 
@@ -63,27 +30,47 @@ def ThefinalList():
     This function converts AllItemsX into a final 2D list (or list of lists),
     while ensuring that 'published' is properly formatted (YYYY-MM-DD HH:MM:SS).
     """
-    # Pseudo code:
-    #  1. Initialize finalList = []
-    #  2. For each item (dict) in AllItemsX:
-    #       a) Extract title, summary, link, published
-    #       b) Parse 'published' date with multiple possible formats
-    #       c) Append results as a small list [title, summary, link, published_str] to finalList
-    #  3. Return finalList
-    
     finalList = []
-
-    # TODO: Replace with your code that:
-    # - loops over AllItemsX
-    # - handles date parsing with datetime.strptime
-    # - appends the processed items to finalList
+    
+    # List of possible date formats to try
+    possible_formats = [
+        "%Y-%m-%d %H:%M:%S",     # e.g., 2025-02-03 15:30:00
+        "%Y-%m-%dT%H:%M:%SZ",    # e.g., 2025-02-03T15:30:00Z (common in JSON APIs)
+        "%a, %d %b %Y %H:%M:%S %z",  # e.g., Tue, 03 Feb 2025 15:30:00 +0000 (RFC 2822)
+        "%Y-%m-%d"               # e.g., 2025-02-03 (if only the date is provided)
+    ]
+    
+    for item in AllItemsX:
+        # Extract values from item, defaulting to an empty string if not present
+        title = item.get("title", "")
+        summary = item.get("summary", "")
+        link = item.get("link", "")
+        published_raw = item.get("published", "")
+        
+        # Initialize the formatted published date with the raw value as a fallback
+        published_formatted = published_raw
+        
+        # Try parsing the published date using each possible format
+        for fmt in possible_formats:
+            try:
+                parsed_date = datetime.strptime(published_raw, fmt)
+                published_formatted = parsed_date.strftime("%Y-%m-%d %H:%M:%S")
+                break  # Stop trying once parsing succeeds
+            except ValueError:
+                continue  # Try the next format if the current one fails
+        
+        # Append the extracted and formatted data to finalList
+        finalList.append([title, summary, link, published_formatted])
     
     return finalList
 
 
+# Create and print the final list
+MyTheFinalList = ThefinalList()
+
 # 3) Create a variable that holds the final list
 MyTheFinalList = ThefinalList()
 
-
+#print the final list
 print(MyTheFinalList)
 print(len(MyTheFinalList))

@@ -1,4 +1,3 @@
-posts = []
 # Import required package
 import feedparser
 
@@ -12,7 +11,7 @@ RSS_URLS = ['http://www.dn.se/nyheter/m/rss/',
               ]  # Example URLs
 
 # Initialize an empty list to store the parsed articles
-
+posts = []
 
 # Loop through each RSS feed URL
 for url in RSS_URLS:
