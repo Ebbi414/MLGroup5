@@ -16,11 +16,11 @@ Students:
 
 # 1) Imports
 from FullRSSList_1_2 import MyTheFinalList
-# from MLModelMLC_3 import categories, vectorizer, best_clf_pipeline
-# from RssFeedNewArticle_2 import printdepositlist
+from MLModelMLC_3 import categories, vectorizer, best_clf_pipeline
+from RssFeedNewArticle_2 import printdepositlist
 
+import json
 import jsonschema
-
 def main():
     # Pseudo code steps:
 
