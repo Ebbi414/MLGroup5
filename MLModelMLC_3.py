@@ -30,8 +30,7 @@ from sklearn.feature_extraction.text import TfidfVectorizer
 from sklearn.pipeline import Pipeline
 from sklearn.multiclass import OneVsRestClassifier
 from sklearn.metrics import accuracy_score
-from sklearn.linear_model import LogisticRegression
-from sklearn.naive_bayes import MultinomialNB
+from sklearn.naive_bayes import MultinomialNB # använder Naive Bayes pga bäst resultat
 
 # If needed for your environment:
 nltk.data.path.append('/usr/local/share/nltk_data')
@@ -41,7 +40,7 @@ if not sys.warnoptions:
     warnings.simplefilter("ignore")
 
 # 1) Load the data
-data_path = "Book1.csv"  # Student: adjust if your CSV is somewhere else
+data_path = "MLGroup5\AnnotationGroup5.csv"  # Student: adjust if your CSV is somewhere else
 data_raw = pd.read_csv(data_path)
 
 # 2) Shuffle the data
