@@ -40,7 +40,7 @@ if not sys.warnoptions:
     warnings.simplefilter("ignore")
 
 # 1) Load the data
-data_path = "MLGroup5\AnnotationGroup5.csv"  # Student: adjust if your CSV is somewhere else
+data_path = "AnnotationGroup5.csv"  # Student: adjust if your CSV is somewhere else
 data_raw = pd.read_csv(data_path)
 
 # 2) Shuffle the data
