@@ -32,7 +32,7 @@ def db_connection():
 #2 Funktion för att infoga data i SQL Server
 def insert_data(data, cnxn):
     """
-    Insert validated articles into the 'news' table in SQL Server.
+    Insert validated articles into the 'RSS_news' table in SQL Server.
     """
     try:
         cursor = cnxn.cursor()
