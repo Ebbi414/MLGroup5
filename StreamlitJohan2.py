@@ -9,8 +9,35 @@ import requests
 from io import BytesIO
 from PIL import Image
 import numpy as np
-from matplotlib.offsetbox import OffsetImage, AnnotationBbox
 import squarify  # For treemap
+import urllib.parse
+
+# -----------------------------
+# Helper function to extract news outlet from a URL
+# -----------------------------
+def get_news_outlet(url):
+    """
+    Given a URL, return a friendly news outlet name based on its domain.
+    """
+    try:
+        parsed = urllib.parse.urlparse(url)
+        domain = parsed.netloc.lower()
+    except Exception:
+        return "Unknown"
+    if "dn.se" in domain:
+        return "Dagens Nyheter"
+    elif "aftonbladet.se" in domain:
+        return "Aftonbladet"
+    elif "expressen.se" in domain:
+        return "Expressen"
+    elif "svd.se" in domain:
+        return "SvD"
+    elif "sr.se" in domain or "sverigesradio.se" in domain:
+        return "Sveriges Radio"
+    elif "svt.se" in domain:
+        return "SVT"
+    else:
+        return domain
 
 # -----------------------------
 # Database fetching (SQL)
@@ -79,6 +106,10 @@ def main():
         st.error(f"Ett fel inträffade: {e}")
         return
 
+    # If "outlet" column is missing but "link" exists, create "outlet" using get_news_outlet()
+    if "outlet" not in df_sql.columns and "link" in df_sql.columns:
+        df_sql["outlet"] = df_sql["link"].apply(get_news_outlet)
+
     # Create two columns: one for the sidebar (filters and buttons) and one for the main content.
     sidebar, content = st.columns([1, 3])
 
@@ -87,7 +118,6 @@ def main():
     # -----------------------------
     with sidebar:
         st.header("🔍 Filter")
-
         # Dynamic list of topics from the SQL data.
         if not df_sql.empty and "topic" in df_sql.columns:
             # Split each topic string (assumed comma‑separated) into individual topics.
@@ -98,7 +128,6 @@ def main():
             all_categories = sorted(set(all_topics))
         else:
             all_categories = []
-
         options = ["Alla"] + all_categories
         category = st.selectbox("Välj kategori", options, key="category_filter")
         date_range = st.date_input("Välj datumintervall", [])
@@ -121,9 +150,7 @@ def main():
         elif st.session_state.view == "insights":
             st.subheader("Insights Dashboard")
 
-            # -----------------------------
             # 1. Heatmap: Articles per Topic and Weekday
-            # -----------------------------
             st.markdown("#### Antal inlägg per kategori och veckodag")
             df_insights = df_sql.copy()
             df_insights['published'] = pd.to_datetime(df_insights['published'], errors='coerce')
@@ -143,62 +170,22 @@ def main():
             ax1.set_title("Antal inlägg per kategori och veckodag")
             st.pyplot(fig1)
 
-            # -----------------------------
-            # 2. Bar Chart: Articles per News Outlet (with logos)
-            # -----------------------------
+            # 2. Bar Chart: Articles per News Outlet (with outlet names as x-axis labels)
             st.markdown("#### Antal artiklar per nyhetsbyrå")
-            # Check if the 'outlet' column is available in the data.
             if "outlet" in df_sql.columns:
                 outlet_counts = df_sql['outlet'].value_counts().reset_index()
                 outlet_counts.columns = ['outlet', 'count']
-
-                # Updated mapping for the RSS feeds:
-                outlet_logos = {
-                    "Dagens Nyheter": "https://upload.wikimedia.org/wikipedia/commons/8/8e/Dagens_Nyheter_logo.svg",
-                    "Aftonbladet": "https://upload.wikimedia.org/wikipedia/commons/8/89/Aftonbladet.svg",
-                    "Expressen": "https://upload.wikimedia.org/wikipedia/commons/0/00/Expressen_logo.svg",
-                    "SvD": "https://upload.wikimedia.org/wikipedia/commons/2/21/Svenska_Dagbladet_logo.svg",
-                    "Sveriges Radio": "https://upload.wikimedia.org/wikipedia/commons/2/2d/Sveriges_Radio_logo.svg",
-                    "SVT": "https://upload.wikimedia.org/wikipedia/commons/3/35/SVT_logo.svg"
-                }
-
                 fig2, ax2 = plt.subplots(figsize=(10, 6))
                 bars = ax2.bar(range(len(outlet_counts)), outlet_counts['count'], color='skyblue')
                 ax2.set_xticks(range(len(outlet_counts)))
-                # Remove default x-axis labels.
-                ax2.set_xticklabels([""] * len(outlet_counts))
+                ax2.set_xticklabels(outlet_counts['outlet'], rotation=45, ha='right')
                 ax2.set_ylabel("Antal artiklar")
                 ax2.set_title("Artiklar per nyhetsbyrå")
-
-                # For each outlet, try to add the logo as the tick label.
-                for i, row in outlet_counts.iterrows():
-                    outlet_name = row['outlet']
-                    logo_url = outlet_logos.get(outlet_name, None)
-                    if logo_url is not None:
-                        try:
-                            response = requests.get(logo_url)
-                            img = Image.open(BytesIO(response.content))
-                            # Resize the image for display.
-                            img = img.resize((40, 40))
-                            imagebox = OffsetImage(np.array(img), zoom=1)
-                            ab = AnnotationBbox(imagebox, (i, 0), frameon=False, box_alignment=(0.5, -0.3))
-                            ax2.add_artist(ab)
-                        except Exception as e:
-                            ax2.text(i, -0.5, outlet_name, ha='center', va='top', fontsize=9)
-                    else:
-                        ax2.text(i, -0.5, outlet_name, ha='center', va='top', fontsize=9)
                 st.pyplot(fig2)
             else:
-                st.info("Nyhetsbyrå information saknas i datan. Kontrollera att kolumnen 'outlet' finns i din databas.")
+                st.info("Nyhetsbyrå information saknas. Kontrollera att kolumnen 'link' finns i din databas.")
 
-            # -----------------------------
-            # 3. (Removed) Time Series: Articles Over Time
-            # -----------------------------
-            # This chart has been removed per request.
-
-            # -----------------------------
-            # 4. Histogram: Article Length Distribution
-            # -----------------------------
+            # 3. Histogram: Article Length Distribution
             st.markdown("#### Distribution av artikellängd (ord i sammanfattningen)")
             df_length = df_sql.copy()
             if "summary" in df_length.columns:
@@ -212,20 +199,14 @@ def main():
             else:
                 st.info("Sammanfattningsdata saknas.")
 
-              # -----------------------------
-            # 5. Treemap: Overall Topic Distribution
-            # -----------------------------
+            # 4. Treemap: Overall Topic Distribution with Percentage Text
             st.markdown("#### Fördelning av ämnen (Treemap)")
             if not df_exploded.empty:
                 topic_dist = df_exploded['topic_list'].value_counts()
-                # Prepare data for treemap: sizes, labels and colors.
                 sizes = topic_dist.values
                 total = sizes.sum()
-                labels = [
-                    f"{topic}\n{count} ({count/total*100:.1f}%)" 
-                    for topic, count in zip(topic_dist.index, topic_dist.values)
-                ]
-                # Create the treemap.
+                labels = [f"{topic}\n{count} ({count/total*100:.1f}%)" 
+                          for topic, count in zip(topic_dist.index, topic_dist.values)]
                 fig5, ax5 = plt.subplots(figsize=(12, 8))
                 squarify.plot(sizes=sizes, label=labels, alpha=.8, color=sns.color_palette("pastel", len(sizes)))
                 ax5.axis('off')
@@ -243,10 +224,8 @@ def main():
             if category != "Alla":
                 filtered_data = [
                     row for row in filtered_data 
-                    if any(t.strip().lower() == category.lower() 
-                           for t in str(row.get('topic', '')).split(","))
+                    if any(t.strip().lower() == category.lower() for t in str(row.get('topic', '')).split(","))
                 ]
-
             if date_range:
                 if isinstance(date_range, list):
                     if len(date_range) == 2:
@@ -268,14 +247,12 @@ def main():
                         except Exception:
                             temp_data.append(row)
                     filtered_data = temp_data
-
             if search_query:
                 search_query_lower = search_query.lower()
                 filtered_data = [
                     row for row in filtered_data
                     if search_query_lower in (str(row.get('title', '')).lower() + str(row.get('summary', '')).lower())
                 ]
-
             st.subheader("📰 News Articles")
             if filtered_data:
                 for row in filtered_data:
@@ -291,7 +268,6 @@ def main():
 # Auto-launch the Streamlit app when the script is run
 # -----------------------------
 if __name__ == "__main__":
-    # This environment variable flag ensures that we only call Streamlit once.
     if os.environ.get("STREAMLIT_RUN") is None:
         os.environ["STREAMLIT_RUN"] = "1"
         os.system(f"{sys.executable} -m streamlit run {sys.argv[0]}")
