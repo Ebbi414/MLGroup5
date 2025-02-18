@@ -22,7 +22,7 @@ def fetch_data():
         "DATABASE=RSS_News;"  # Byt till din databas
         "Trust_Connection=yes;"
     )
-    query = "SELECT id, title, summary, link, published, topic, source FROM news"
+    query = "SELECT title, summary, link, published, topic, source FROM news"
     df = pd.read_sql(query, conn)
     conn.close()
     
