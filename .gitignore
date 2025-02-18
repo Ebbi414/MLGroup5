@@ -8,4 +8,11 @@ Johan
 Inlämning2JohanMo.ipynb
 inlämning2test.ipynb
 Archive
-config.ini
+dbconfig.ini
+CreateCloudSQLdb.sql
+NewUser.sql
+logs
+predictions
+feeds
+
+
