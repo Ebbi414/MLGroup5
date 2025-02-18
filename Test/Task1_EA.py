@@ -10,6 +10,7 @@ RSS_FEED_URL = [
     'http://www.svt.se/nyheter/rss.xml'
 ]
 
+
 # Fetch the RSS feeds and parse them
 posts = []
 for url in RSS_FEED_URL:
@@ -21,6 +22,30 @@ for url in RSS_FEED_URL:
         }
         posts.append(post)
 
+def gettingNecessaryList():
+        
+    allitems = []
+
+    posts = []
+    for url in RSS_FEED_URL:
+        feed = feedparser.parse(url)
+        for entry in feed.entries:
+            post = {
+                "title": entry.get("title", ""),
+                "summary": entry.get("description", ""),
+            }
+            posts.append(post)
+    
+    #TODO: Replace with your actual code, e.g.:
+    for x in posts:
+        tempdict = {}
+        tempdict["title"] = x.get("title", "")
+        tempdict["summary"] = x.get("summary", "")
+        tempdict["link"] = x.get("link", "")
+        tempdict["published"] = x.get("published", "")
+        allitems.append(tempdict)
+    
+    return allitems
 
 def OnlyTitlesandSummaries():
     """
