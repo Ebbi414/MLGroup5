@@ -1,14 +1,14 @@
-import streamlit as st
-st.set_page_config(layout="centered")
-import pandas as pd
-import matplotlib.pyplot as plt
-import numpy as np
-import pyodbc
-import seaborn as sns
-from wordcloud import WordCloud
-from nltk.corpus import stopwords
-import nltk
-import squarify
+import streamlit as st  # Streamlit används för att skapa webbaserade datadrivna applikationer i Python.
+st.set_page_config(layout="centered") # Ställer in layouten för Streamlit-appen till centrerad.
+import pandas as pd # Pandas används för att hantera och analysera data i form av tabeller (DataFrames).
+import matplotlib.pyplot as plt # Matplotlib är ett bibliotek för att skapa visualiseringar, såsom grafer och diagram.
+import numpy as np # NumPy används för att hantera numeriska operationer och matrisberäkningar.
+import pyodbc # PyODBC används för att ansluta till och interagera med databaser via ODBC-drivrutiner.
+import seaborn as sns # Seaborn är ett bibliotek som bygger på Matplotlib och används för att skapa mer avancerade och snygga visualiseringar.
+from wordcloud import WordCloud # WordCloud används för att skapa ordmoln baserat på textdata.
+from nltk.corpus import stopwords   # NLTK:s stopwords används för att filtrera bort vanliga ord (t.ex. "och", "den", "att") i textanalys.
+import nltk # NLTK (Natural Language Toolkit) är ett bibliotek för bearbetning av naturligt språk.
+import squarify # Squarify används för att skapa treemap-diagram, en typ av visualisering där rektanglar representerar data.
 
 nltk.download('stopwords')
 
