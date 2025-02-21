@@ -32,6 +32,7 @@ def fetch_data():
         lambda x: [t.strip() for t in x.split(',') if t.strip()])
     df['topic'] = df['topic'].apply(lambda x: x if x else ["Okänd kategori"])
     df['published_date'] = pd.to_datetime(df['published_date'])
+    df = df[~df['topic'].apply(lambda x: "Unknown" in x)] # Filtrerar bort "unknown"
     return df
 
 # --------------------------
@@ -164,14 +165,15 @@ weekday_counts.plot(kind='bar', ax=ax, color='salmon', edgecolor='black')
 st.pyplot(fig)
 
 
+from collections import Counter
 with st.container():
-    st.subheader("☁ Vanliga ord i nyhetstitlar")  # 6
-swedish_stopwords = set(stopwords.words('swedish')).union(
-    {'svar', 'får', 'ska', 'på', 'för', 'att', 'och'})
-titles_text = " ".join([word for title in filtered_data['title']
-                       for word in title.split() if word.lower() not in swedish_stopwords])
-wordcloud = WordCloud(width=800, height=400,
-                      background_color='white').generate(titles_text)
+    st.subheader("☁ Top 15 vanliga ord i nyhetstitlar") #6
+swedish_stopwords = set(stopwords.words('swedish')).union({'svar', 'får', 'ska', 'på', 'för', 'att', 'och'})
+# Samla in ord från titlarna som inte finns i stopwords
+words = [word.lower() for title in filtered_data['title'] for word in title.split() if word.lower() not in swedish_stopwords]
+# Räkna ordens frekvens och välj de 10 vanligaste
+most_common_words = dict(Counter(words).most_common(15))
+wordcloud = WordCloud(width=800, height=400, background_color="white").generate_from_frequencies(most_common_words)
 fig, ax = plt.subplots()
 ax.imshow(wordcloud, interpolation='bilinear')
 ax.axis("off")
@@ -179,7 +181,16 @@ st.pyplot(fig)
 
 with st.expander("📌 Sammanfattning & Insikter"):
     st.markdown("""
-    - **Samhälle och Konflikter** är de vanligaste kategorin.
-    - Nyheter publiceras oftast på vardagar.
-    - **Dagens Nyheter** publicerar flest nyheter.
-    """)
+    - **Dagens Nyheter** publicerar flest nyheter - Har de bredare täckning, eller publicerar de fler små nyheter än andra?
+    - **Samhälle och Konflikter** är de vanligaste kategorin. - Det säger mycket om vad som prioriteras i media.
+    - **Vetenskap och Teknik** har minst antal artiklar, trots att det är en av de snabbaste växande och mest inflytesrika sektorerna i världen.
+    - Nyheter publiceras oftast på vardagar, **Torsdagar** för att vara specifik. 
+    - Om nyheter publiceras mindre under helger beror det på att färre nyheter skrivs, eller att redaktionerna prioriterar andra typer av innehåll?
+    - Alla nyhetskällor har samma top 2-ämnen, men deras tredje största kategori skiljer sig åt:
+    
+        **Aftonbladet, Expressen & SVD → Livsstil**
+        
+        **DN, SVT & Sveriges Radio → Idrott**
+        
+        Vilket betyder att det vi uppfattar som "de viktigaste nyheterna" påverkas av vilken nyhetskälla vi följer.
+    """, unsafe_allow_html=True)
