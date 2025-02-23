@@ -1,0 +1,627 @@
+2025-02-20 20:57:25,904 - __main__ - INFO - Preparing data...
+2025-02-20 20:57:26,352 - __main__ - INFO - Saved 10 categories to bestmodel\categories.joblib
+2025-02-20 20:57:26,352 - __main__ - INFO - Initializing model training...
+2025-02-20 20:57:26,353 - model_manager - INFO - Training and evaluating models...
+2025-02-20 20:57:26,353 - model_manager - INFO - 
+=== Training Logistic Regression ===
+2025-02-20 21:01:45,299 - utils - INFO - 
+Grid Search Results:
+2025-02-20 21:01:45,301 - utils - INFO - Parameters: {'estimator__C': 10.0, 'estimator__penalty': 'l1', 'estimator__solver': 'liblinear'}
+2025-02-20 21:01:45,304 - utils - INFO - Mean Test Score: 0.2557291666666667
+2025-02-20 21:01:45,304 - utils - INFO - Rank: 3
+2025-02-20 21:01:45,304 - utils - INFO - Parameters: {'estimator__C': 10.0, 'estimator__penalty': 'l2', 'estimator__solver': 'liblinear'}
+2025-02-20 21:01:45,304 - utils - INFO - Mean Test Score: 0.16458333333333333
+2025-02-20 21:01:45,305 - utils - INFO - Rank: 6
+2025-02-20 21:01:45,305 - utils - INFO - Parameters: {'estimator__C': 20, 'estimator__penalty': 'l1', 'estimator__solver': 'liblinear'}
+2025-02-20 21:01:45,305 - utils - INFO - Mean Test Score: 0.2578125
+2025-02-20 21:01:45,306 - utils - INFO - Rank: 1
+2025-02-20 21:01:45,306 - utils - INFO - Parameters: {'estimator__C': 20, 'estimator__penalty': 'l2', 'estimator__solver': 'liblinear'}
+2025-02-20 21:01:45,306 - utils - INFO - Mean Test Score: 0.175
+2025-02-20 21:01:45,306 - utils - INFO - Rank: 5
+2025-02-20 21:01:45,308 - utils - INFO - Parameters: {'estimator__C': 50, 'estimator__penalty': 'l1', 'estimator__solver': 'liblinear'}
+2025-02-20 21:01:45,308 - utils - INFO - Mean Test Score: 0.25625000000000003
+2025-02-20 21:01:45,308 - utils - INFO - Rank: 2
+2025-02-20 21:01:45,309 - utils - INFO - Parameters: {'estimator__C': 50, 'estimator__penalty': 'l2', 'estimator__solver': 'liblinear'}
+2025-02-20 21:01:45,309 - utils - INFO - Mean Test Score: 0.18750000000000003
+2025-02-20 21:01:45,309 - utils - INFO - Rank: 4
+2025-02-20 21:01:45,309 - model_manager - INFO - Results for Logistic Regression: {'accuracy': 0.3020833333333333, 'precision_micro': 0.5992366412213741, 'precision_macro': 0.5426450885117976, 'recall_micro': 0.4743202416918429, 'recall_macro': 0.3842128521668603, 'f1_micro': 0.5295109612141653, 'f1_macro': 0.4360306182386943}
+2025-02-20 21:01:45,310 - model_manager - INFO - 
+=== Training Linear SVC ===
+2025-02-20 21:01:50,275 - utils - INFO - 
+Grid Search Results:
+2025-02-20 21:01:50,281 - utils - INFO - Parameters: {'estimator__C': 1, 'estimator__dual': False, 'estimator__loss': 'squared_hinge', 'estimator__penalty': 'l1'}
+2025-02-20 21:01:50,283 - utils - INFO - Mean Test Score: 0.203125
+2025-02-20 21:01:50,283 - utils - INFO - Rank: 5
+2025-02-20 21:01:50,283 - utils - INFO - Parameters: {'estimator__C': 1, 'estimator__dual': False, 'estimator__loss': 'squared_hinge', 'estimator__penalty': 'l2'}
+2025-02-20 21:01:50,284 - utils - INFO - Mean Test Score: 0.1828125
+2025-02-20 21:01:50,284 - utils - INFO - Rank: 6
+2025-02-20 21:01:50,284 - utils - INFO - Parameters: {'estimator__C': 10.0, 'estimator__dual': False, 'estimator__loss': 'squared_hinge', 'estimator__penalty': 'l1'}
+2025-02-20 21:01:50,284 - utils - INFO - Mean Test Score: 0.253125
+2025-02-20 21:01:50,284 - utils - INFO - Rank: 1
+2025-02-20 21:01:50,285 - utils - INFO - Parameters: {'estimator__C': 10.0, 'estimator__dual': False, 'estimator__loss': 'squared_hinge', 'estimator__penalty': 'l2'}
+2025-02-20 21:01:50,285 - utils - INFO - Mean Test Score: 0.215625
+2025-02-20 21:01:50,285 - utils - INFO - Rank: 4
+2025-02-20 21:01:50,285 - utils - INFO - Parameters: {'estimator__C': 100, 'estimator__dual': False, 'estimator__loss': 'squared_hinge', 'estimator__penalty': 'l1'}
+2025-02-20 21:01:50,286 - utils - INFO - Mean Test Score: 0.2515625
+2025-02-20 21:01:50,286 - utils - INFO - Rank: 2
+2025-02-20 21:01:50,286 - utils - INFO - Parameters: {'estimator__C': 100, 'estimator__dual': False, 'estimator__loss': 'squared_hinge', 'estimator__penalty': 'l2'}
+2025-02-20 21:01:50,286 - utils - INFO - Mean Test Score: 0.2182291666666667
+2025-02-20 21:01:50,286 - utils - INFO - Rank: 3
+2025-02-20 21:01:50,286 - model_manager - INFO - Results for Linear SVC: {'accuracy': 0.30416666666666664, 'precision_micro': 0.6363636363636364, 'precision_macro': 0.6061290640896477, 'recall_micro': 0.4652567975830816, 'recall_macro': 0.3918937260052294, 'f1_micro': 0.537521815008726, 'f1_macro': 0.46652824224264755}
+2025-02-20 21:01:50,288 - model_manager - INFO - 
+=== Training SVM ===
+2025-02-20 21:07:10,084 - utils - INFO - 
+Grid Search Results:
+2025-02-20 21:07:10,084 - utils - INFO - Parameters: {'estimator__C': 0.5, 'estimator__class_weight': None, 'estimator__kernel': 'linear'}
+2025-02-20 21:07:10,084 - utils - INFO - Mean Test Score: 0.05572916666666666
+2025-02-20 21:07:10,085 - utils - INFO - Rank: 11
+2025-02-20 21:07:10,085 - utils - INFO - Parameters: {'estimator__C': 0.5, 'estimator__class_weight': None, 'estimator__kernel': 'rbf'}
+2025-02-20 21:07:10,085 - utils - INFO - Mean Test Score: 0.028645833333333332
+2025-02-20 21:07:10,085 - utils - INFO - Rank: 12
+2025-02-20 21:07:10,085 - utils - INFO - Parameters: {'estimator__C': 0.5, 'estimator__class_weight': 'balanced', 'estimator__kernel': 'linear'}
+2025-02-20 21:07:10,087 - utils - INFO - Mean Test Score: 0.25468749999999996
+2025-02-20 21:07:10,087 - utils - INFO - Rank: 1
+2025-02-20 21:07:10,087 - utils - INFO - Parameters: {'estimator__C': 0.5, 'estimator__class_weight': 'balanced', 'estimator__kernel': 'rbf'}
+2025-02-20 21:07:10,087 - utils - INFO - Mean Test Score: 0.14583333333333331
+2025-02-20 21:07:10,087 - utils - INFO - Rank: 7
+2025-02-20 21:07:10,087 - utils - INFO - Parameters: {'estimator__C': 1.0, 'estimator__class_weight': None, 'estimator__kernel': 'linear'}
+2025-02-20 21:07:10,088 - utils - INFO - Mean Test Score: 0.17760416666666665
+2025-02-20 21:07:10,088 - utils - INFO - Rank: 5
+2025-02-20 21:07:10,089 - utils - INFO - Parameters: {'estimator__C': 1.0, 'estimator__class_weight': None, 'estimator__kernel': 'rbf'}
+2025-02-20 21:07:10,089 - utils - INFO - Mean Test Score: 0.09322916666666667
+2025-02-20 21:07:10,089 - utils - INFO - Rank: 10
+2025-02-20 21:07:10,090 - utils - INFO - Parameters: {'estimator__C': 1.0, 'estimator__class_weight': 'balanced', 'estimator__kernel': 'linear'}
+2025-02-20 21:07:10,090 - utils - INFO - Mean Test Score: 0.22760416666666666
+2025-02-20 21:07:10,090 - utils - INFO - Rank: 2
+2025-02-20 21:07:10,090 - utils - INFO - Parameters: {'estimator__C': 1.0, 'estimator__class_weight': 'balanced', 'estimator__kernel': 'rbf'}
+2025-02-20 21:07:10,091 - utils - INFO - Mean Test Score: 0.14999999999999997
+2025-02-20 21:07:10,091 - utils - INFO - Rank: 6
+2025-02-20 21:07:10,091 - utils - INFO - Parameters: {'estimator__C': 10.0, 'estimator__class_weight': None, 'estimator__kernel': 'linear'}
+2025-02-20 21:07:10,091 - utils - INFO - Mean Test Score: 0.2171875
+2025-02-20 21:07:10,093 - utils - INFO - Rank: 4
+2025-02-20 21:07:10,093 - utils - INFO - Parameters: {'estimator__C': 10.0, 'estimator__class_weight': None, 'estimator__kernel': 'rbf'}
+2025-02-20 21:07:10,093 - utils - INFO - Mean Test Score: 0.13385416666666666
+2025-02-20 21:07:10,093 - utils - INFO - Rank: 9
+2025-02-20 21:07:10,094 - utils - INFO - Parameters: {'estimator__C': 10.0, 'estimator__class_weight': 'balanced', 'estimator__kernel': 'linear'}
+2025-02-20 21:07:10,094 - utils - INFO - Mean Test Score: 0.21875
+2025-02-20 21:07:10,094 - utils - INFO - Rank: 3
+2025-02-20 21:07:10,095 - utils - INFO - Parameters: {'estimator__C': 10.0, 'estimator__class_weight': 'balanced', 'estimator__kernel': 'rbf'}
+2025-02-20 21:07:10,095 - utils - INFO - Mean Test Score: 0.134375
+2025-02-20 21:07:10,095 - utils - INFO - Rank: 8
+2025-02-20 21:07:10,096 - model_manager - INFO - Results for SVM: {'accuracy': 0.3333333333333333, 'precision_micro': 0.6438631790744467, 'precision_macro': 0.5835741798914047, 'recall_micro': 0.48338368580060426, 'recall_macro': 0.3711634160742359, 'f1_micro': 0.5522001725625539, 'f1_macro': 0.443304583970173}
+2025-02-20 21:07:10,096 - model_manager - INFO - 
+=== Training Random Forest ===
+2025-02-20 21:43:45,211 - utils - INFO - 
+Grid Search Results:
+2025-02-20 21:43:45,213 - utils - INFO - Parameters: {'estimator__class_weight': None, 'estimator__max_depth': None, 'estimator__min_samples_split': 2, 'estimator__n_estimators': 200}
+2025-02-20 21:43:45,213 - utils - INFO - Mean Test Score: 0.14739583333333334
+2025-02-20 21:43:45,213 - utils - INFO - Rank: 10
+2025-02-20 21:43:45,214 - utils - INFO - Parameters: {'estimator__class_weight': None, 'estimator__max_depth': None, 'estimator__min_samples_split': 2, 'estimator__n_estimators': 300}
+2025-02-20 21:43:45,214 - utils - INFO - Mean Test Score: 0.15
+2025-02-20 21:43:45,214 - utils - INFO - Rank: 6
+2025-02-20 21:43:45,215 - utils - INFO - Parameters: {'estimator__class_weight': None, 'estimator__max_depth': None, 'estimator__min_samples_split': 5, 'estimator__n_estimators': 200}
+2025-02-20 21:43:45,215 - utils - INFO - Mean Test Score: 0.14947916666666666
+2025-02-20 21:43:45,215 - utils - INFO - Rank: 7
+2025-02-20 21:43:45,215 - utils - INFO - Parameters: {'estimator__class_weight': None, 'estimator__max_depth': None, 'estimator__min_samples_split': 5, 'estimator__n_estimators': 300}
+2025-02-20 21:43:45,215 - utils - INFO - Mean Test Score: 0.14947916666666666
+2025-02-20 21:43:45,215 - utils - INFO - Rank: 7
+2025-02-20 21:43:45,216 - utils - INFO - Parameters: {'estimator__class_weight': None, 'estimator__max_depth': 10, 'estimator__min_samples_split': 2, 'estimator__n_estimators': 200}
+2025-02-20 21:43:45,216 - utils - INFO - Mean Test Score: 0.003645833333333333
+2025-02-20 21:43:45,216 - utils - INFO - Rank: 21
+2025-02-20 21:43:45,217 - utils - INFO - Parameters: {'estimator__class_weight': None, 'estimator__max_depth': 10, 'estimator__min_samples_split': 2, 'estimator__n_estimators': 300}
+2025-02-20 21:43:45,217 - utils - INFO - Mean Test Score: 0.003645833333333333
+2025-02-20 21:43:45,217 - utils - INFO - Rank: 21
+2025-02-20 21:43:45,218 - utils - INFO - Parameters: {'estimator__class_weight': None, 'estimator__max_depth': 10, 'estimator__min_samples_split': 5, 'estimator__n_estimators': 200}
+2025-02-20 21:43:45,218 - utils - INFO - Mean Test Score: 0.003645833333333333
+2025-02-20 21:43:45,218 - utils - INFO - Rank: 21
+2025-02-20 21:43:45,219 - utils - INFO - Parameters: {'estimator__class_weight': None, 'estimator__max_depth': 10, 'estimator__min_samples_split': 5, 'estimator__n_estimators': 300}
+2025-02-20 21:43:45,219 - utils - INFO - Mean Test Score: 0.003645833333333333
+2025-02-20 21:43:45,219 - utils - INFO - Rank: 21
+2025-02-20 21:43:45,219 - utils - INFO - Parameters: {'estimator__class_weight': None, 'estimator__max_depth': 20, 'estimator__min_samples_split': 2, 'estimator__n_estimators': 200}
+2025-02-20 21:43:45,220 - utils - INFO - Mean Test Score: 0.010416666666666668
+2025-02-20 21:43:45,220 - utils - INFO - Rank: 17
+2025-02-20 21:43:45,220 - utils - INFO - Parameters: {'estimator__class_weight': None, 'estimator__max_depth': 20, 'estimator__min_samples_split': 2, 'estimator__n_estimators': 300}
+2025-02-20 21:43:45,220 - utils - INFO - Mean Test Score: 0.009895833333333335
+2025-02-20 21:43:45,222 - utils - INFO - Rank: 19
+2025-02-20 21:43:45,222 - utils - INFO - Parameters: {'estimator__class_weight': None, 'estimator__max_depth': 20, 'estimator__min_samples_split': 5, 'estimator__n_estimators': 200}
+2025-02-20 21:43:45,222 - utils - INFO - Mean Test Score: 0.010416666666666668
+2025-02-20 21:43:45,222 - utils - INFO - Rank: 17
+2025-02-20 21:43:45,223 - utils - INFO - Parameters: {'estimator__class_weight': None, 'estimator__max_depth': 20, 'estimator__min_samples_split': 5, 'estimator__n_estimators': 300}
+2025-02-20 21:43:45,223 - utils - INFO - Mean Test Score: 0.009895833333333335
+2025-02-20 21:43:45,223 - utils - INFO - Rank: 19
+2025-02-20 21:43:45,223 - utils - INFO - Parameters: {'estimator__class_weight': 'balanced', 'estimator__max_depth': None, 'estimator__min_samples_split': 2, 'estimator__n_estimators': 200}
+2025-02-20 21:43:45,224 - utils - INFO - Mean Test Score: 0.15260416666666668
+2025-02-20 21:43:45,224 - utils - INFO - Rank: 3
+2025-02-20 21:43:45,224 - utils - INFO - Parameters: {'estimator__class_weight': 'balanced', 'estimator__max_depth': None, 'estimator__min_samples_split': 2, 'estimator__n_estimators': 300}
+2025-02-20 21:43:45,224 - utils - INFO - Mean Test Score: 0.1515625
+2025-02-20 21:43:45,224 - utils - INFO - Rank: 5
+2025-02-20 21:43:45,224 - utils - INFO - Parameters: {'estimator__class_weight': 'balanced', 'estimator__max_depth': None, 'estimator__min_samples_split': 5, 'estimator__n_estimators': 200}
+2025-02-20 21:43:45,225 - utils - INFO - Mean Test Score: 0.16145833333333331
+2025-02-20 21:43:45,225 - utils - INFO - Rank: 1
+2025-02-20 21:43:45,225 - utils - INFO - Parameters: {'estimator__class_weight': 'balanced', 'estimator__max_depth': None, 'estimator__min_samples_split': 5, 'estimator__n_estimators': 300}
+2025-02-20 21:43:45,225 - utils - INFO - Mean Test Score: 0.16145833333333331
+2025-02-20 21:43:45,226 - utils - INFO - Rank: 1
+2025-02-20 21:43:45,226 - utils - INFO - Parameters: {'estimator__class_weight': 'balanced', 'estimator__max_depth': 10, 'estimator__min_samples_split': 2, 'estimator__n_estimators': 200}
+2025-02-20 21:43:45,226 - utils - INFO - Mean Test Score: 0.14114583333333333
+2025-02-20 21:43:45,227 - utils - INFO - Rank: 14
+2025-02-20 21:43:45,233 - utils - INFO - Parameters: {'estimator__class_weight': 'balanced', 'estimator__max_depth': 10, 'estimator__min_samples_split': 2, 'estimator__n_estimators': 300}
+2025-02-20 21:43:45,234 - utils - INFO - Mean Test Score: 0.14010416666666664
+2025-02-20 21:43:45,234 - utils - INFO - Rank: 15
+2025-02-20 21:43:45,234 - utils - INFO - Parameters: {'estimator__class_weight': 'balanced', 'estimator__max_depth': 10, 'estimator__min_samples_split': 5, 'estimator__n_estimators': 200}
+2025-02-20 21:43:45,234 - utils - INFO - Mean Test Score: 0.1421875
+2025-02-20 21:43:45,234 - utils - INFO - Rank: 12
+2025-02-20 21:43:45,235 - utils - INFO - Parameters: {'estimator__class_weight': 'balanced', 'estimator__max_depth': 10, 'estimator__min_samples_split': 5, 'estimator__n_estimators': 300}
+2025-02-20 21:43:45,235 - utils - INFO - Mean Test Score: 0.14479166666666668
+2025-02-20 21:43:45,235 - utils - INFO - Rank: 11
+2025-02-20 21:43:45,235 - utils - INFO - Parameters: {'estimator__class_weight': 'balanced', 'estimator__max_depth': 20, 'estimator__min_samples_split': 2, 'estimator__n_estimators': 200}
+2025-02-20 21:43:45,235 - utils - INFO - Mean Test Score: 0.13802083333333331
+2025-02-20 21:43:45,236 - utils - INFO - Rank: 16
+2025-02-20 21:43:45,236 - utils - INFO - Parameters: {'estimator__class_weight': 'balanced', 'estimator__max_depth': 20, 'estimator__min_samples_split': 2, 'estimator__n_estimators': 300}
+2025-02-20 21:43:45,236 - utils - INFO - Mean Test Score: 0.14166666666666666
+2025-02-20 21:43:45,236 - utils - INFO - Rank: 13
+2025-02-20 21:43:45,236 - utils - INFO - Parameters: {'estimator__class_weight': 'balanced', 'estimator__max_depth': 20, 'estimator__min_samples_split': 5, 'estimator__n_estimators': 200}
+2025-02-20 21:43:45,236 - utils - INFO - Mean Test Score: 0.1484375
+2025-02-20 21:43:45,237 - utils - INFO - Rank: 9
+2025-02-20 21:43:45,237 - utils - INFO - Parameters: {'estimator__class_weight': 'balanced', 'estimator__max_depth': 20, 'estimator__min_samples_split': 5, 'estimator__n_estimators': 300}
+2025-02-20 21:43:45,237 - utils - INFO - Mean Test Score: 0.15208333333333332
+2025-02-20 21:43:45,237 - utils - INFO - Rank: 4
+2025-02-20 21:43:45,238 - model_manager - INFO - Results for Random Forest: {'accuracy': 0.18541666666666667, 'precision_micro': 0.6971830985915493, 'precision_macro': 0.6144439852443709, 'recall_micro': 0.2990936555891239, 'recall_macro': 0.23358686354784358, 'f1_micro': 0.4186046511627907, 'f1_macro': 0.32894923693554884}
+2025-02-20 21:43:45,238 - model_manager - INFO - 
+=== Training Naive Bayes ===
+2025-02-20 21:43:46,107 - utils - INFO - 
+Grid Search Results:
+2025-02-20 21:43:46,108 - utils - INFO - Parameters: {'estimator__alpha': 0.2, 'estimator__fit_prior': True}
+2025-02-20 21:43:46,108 - utils - INFO - Mean Test Score: 0.2791666666666667
+2025-02-20 21:43:46,108 - utils - INFO - Rank: 2
+2025-02-20 21:43:46,108 - utils - INFO - Parameters: {'estimator__alpha': 0.2, 'estimator__fit_prior': False}
+2025-02-20 21:43:46,109 - utils - INFO - Mean Test Score: 0.11041666666666665
+2025-02-20 21:43:46,109 - utils - INFO - Rank: 6
+2025-02-20 21:43:46,109 - utils - INFO - Parameters: {'estimator__alpha': 0.21, 'estimator__fit_prior': True}
+2025-02-20 21:43:46,109 - utils - INFO - Mean Test Score: 0.2796875
+2025-02-20 21:43:46,109 - utils - INFO - Rank: 1
+2025-02-20 21:43:46,110 - utils - INFO - Parameters: {'estimator__alpha': 0.21, 'estimator__fit_prior': False}
+2025-02-20 21:43:46,110 - utils - INFO - Mean Test Score: 0.1109375
+2025-02-20 21:43:46,110 - utils - INFO - Rank: 5
+2025-02-20 21:43:46,110 - utils - INFO - Parameters: {'estimator__alpha': 0.22, 'estimator__fit_prior': True}
+2025-02-20 21:43:46,110 - utils - INFO - Mean Test Score: 0.275
+2025-02-20 21:43:46,111 - utils - INFO - Rank: 3
+2025-02-20 21:43:46,111 - utils - INFO - Parameters: {'estimator__alpha': 0.22, 'estimator__fit_prior': False}
+2025-02-20 21:43:46,111 - utils - INFO - Mean Test Score: 0.11145833333333333
+2025-02-20 21:43:46,111 - utils - INFO - Rank: 4
+2025-02-20 21:43:46,111 - model_manager - INFO - Results for Naive Bayes: {'accuracy': 0.3125, 'precision_micro': 0.7588235294117647, 'precision_macro': 0.7166345334298879, 'recall_micro': 0.38972809667673713, 'recall_macro': 0.2824351576452083, 'f1_micro': 0.5149700598802395, 'f1_macro': 0.3864628941781522}
+2025-02-20 21:43:46,115 - model_persistence - INFO - Saving model components...
+2025-02-20 21:43:46,404 - model_persistence - INFO - Model components saved successfully
+2025-02-20 21:43:46,405 - __main__ - INFO - 
+Final Model Comparison:
+2025-02-20 21:43:46,407 - __main__ - INFO -                      accuracy  precision_micro  precision_macro  recall_micro  recall_macro  f1_micro  f1_macro
+SVM                  0.333333         0.643863         0.583574      0.483384      0.371163  0.552200  0.443305
+Naive Bayes          0.312500         0.758824         0.716635      0.389728      0.282435  0.514970  0.386463
+Linear SVC           0.304167         0.636364         0.606129      0.465257      0.391894  0.537522  0.466528
+Logistic Regression  0.302083         0.599237         0.542645      0.474320      0.384213  0.529511  0.436031
+Random Forest        0.185417         0.697183         0.614444      0.299094      0.233587  0.418605  0.328949
+2025-02-20 21:43:46,441 - __main__ - INFO - 
+Best performing model: SVM
+2025-02-20 22:45:54,230 - __main__ - INFO - Preparing data...
+2025-02-20 22:45:54,596 - __main__ - INFO - Saved 10 categories to bestmodel\categories.joblib
+2025-02-20 22:45:54,596 - __main__ - INFO - Initializing model training...
+2025-02-20 22:45:54,596 - model_manager - INFO - Training and evaluating models...
+2025-02-20 22:45:54,596 - model_manager - INFO - 
+=== Training Logistic Regression ===
+2025-02-20 22:48:29,731 - utils - INFO - 
+Grid Search Results:
+2025-02-20 22:48:29,731 - utils - INFO - Parameters: {'estimator__C': 10.0, 'estimator__penalty': 'l1', 'estimator__solver': 'liblinear'}
+2025-02-20 22:48:29,731 - utils - INFO - Mean Test Score: 0.2557291666666667
+2025-02-20 22:48:29,731 - utils - INFO - Rank: 3
+2025-02-20 22:48:29,732 - utils - INFO - Parameters: {'estimator__C': 10.0, 'estimator__penalty': 'l2', 'estimator__solver': 'liblinear'}
+2025-02-20 22:48:29,732 - utils - INFO - Mean Test Score: 0.16458333333333333
+2025-02-20 22:48:29,732 - utils - INFO - Rank: 6
+2025-02-20 22:48:29,732 - utils - INFO - Parameters: {'estimator__C': 20, 'estimator__penalty': 'l1', 'estimator__solver': 'liblinear'}
+2025-02-20 22:48:29,733 - utils - INFO - Mean Test Score: 0.2578125
+2025-02-20 22:48:29,733 - utils - INFO - Rank: 1
+2025-02-20 22:48:29,733 - utils - INFO - Parameters: {'estimator__C': 20, 'estimator__penalty': 'l2', 'estimator__solver': 'liblinear'}
+2025-02-20 22:48:29,733 - utils - INFO - Mean Test Score: 0.175
+2025-02-20 22:48:29,734 - utils - INFO - Rank: 5
+2025-02-20 22:48:29,734 - utils - INFO - Parameters: {'estimator__C': 50, 'estimator__penalty': 'l1', 'estimator__solver': 'liblinear'}
+2025-02-20 22:48:29,734 - utils - INFO - Mean Test Score: 0.25625000000000003
+2025-02-20 22:48:29,734 - utils - INFO - Rank: 2
+2025-02-20 22:48:29,735 - utils - INFO - Parameters: {'estimator__C': 50, 'estimator__penalty': 'l2', 'estimator__solver': 'liblinear'}
+2025-02-20 22:48:29,735 - utils - INFO - Mean Test Score: 0.18750000000000003
+2025-02-20 22:48:29,735 - utils - INFO - Rank: 4
+2025-02-20 22:48:29,735 - model_manager - INFO - Results for Logistic Regression: {'accuracy': 0.30416666666666664, 'precision_micro': 0.6030534351145038, 'precision_macro': 0.5449987528811058, 'recall_micro': 0.4773413897280967, 'recall_macro': 0.3881781883013141, 'f1_micro': 0.5328836424957841, 'f1_macro': 0.4408921395905424}
+2025-02-20 22:48:29,736 - model_manager - INFO - 
+=== Training Linear SVC ===
+2025-02-20 22:48:32,573 - utils - INFO - 
+Grid Search Results:
+2025-02-20 22:48:32,574 - utils - INFO - Parameters: {'estimator__C': 1, 'estimator__dual': False, 'estimator__loss': 'squared_hinge', 'estimator__penalty': 'l1'}
+2025-02-20 22:48:32,574 - utils - INFO - Mean Test Score: 0.203125
+2025-02-20 22:48:32,575 - utils - INFO - Rank: 5
+2025-02-20 22:48:32,575 - utils - INFO - Parameters: {'estimator__C': 1, 'estimator__dual': False, 'estimator__loss': 'squared_hinge', 'estimator__penalty': 'l2'}
+2025-02-20 22:48:32,575 - utils - INFO - Mean Test Score: 0.1828125
+2025-02-20 22:48:32,575 - utils - INFO - Rank: 6
+2025-02-20 22:48:32,575 - utils - INFO - Parameters: {'estimator__C': 10.0, 'estimator__dual': False, 'estimator__loss': 'squared_hinge', 'estimator__penalty': 'l1'}
+2025-02-20 22:48:32,576 - utils - INFO - Mean Test Score: 0.253125
+2025-02-20 22:48:32,576 - utils - INFO - Rank: 1
+2025-02-20 22:48:32,576 - utils - INFO - Parameters: {'estimator__C': 10.0, 'estimator__dual': False, 'estimator__loss': 'squared_hinge', 'estimator__penalty': 'l2'}
+2025-02-20 22:48:32,576 - utils - INFO - Mean Test Score: 0.215625
+2025-02-20 22:48:32,576 - utils - INFO - Rank: 4
+2025-02-20 22:48:32,576 - utils - INFO - Parameters: {'estimator__C': 100, 'estimator__dual': False, 'estimator__loss': 'squared_hinge', 'estimator__penalty': 'l1'}
+2025-02-20 22:48:32,577 - utils - INFO - Mean Test Score: 0.2520833333333333
+2025-02-20 22:48:32,577 - utils - INFO - Rank: 2
+2025-02-20 22:48:32,577 - utils - INFO - Parameters: {'estimator__C': 100, 'estimator__dual': False, 'estimator__loss': 'squared_hinge', 'estimator__penalty': 'l2'}
+2025-02-20 22:48:32,577 - utils - INFO - Mean Test Score: 0.2182291666666667
+2025-02-20 22:48:32,577 - utils - INFO - Rank: 3
+2025-02-20 22:48:32,578 - model_manager - INFO - Results for Linear SVC: {'accuracy': 0.31666666666666665, 'precision_micro': 0.6447638603696099, 'precision_macro': 0.6255318460388863, 'recall_micro': 0.4743202416918429, 'recall_macro': 0.3774680165154782, 'f1_micro': 0.546562228024369, 'f1_macro': 0.4576193193055251}
+2025-02-20 22:48:32,578 - model_manager - INFO - 
+=== Training SVM ===
+2025-02-20 22:52:01,554 - utils - INFO - 
+Grid Search Results:
+2025-02-20 22:52:01,555 - utils - INFO - Parameters: {'estimator__C': 0.5, 'estimator__class_weight': None, 'estimator__kernel': 'linear'}
+2025-02-20 22:52:01,555 - utils - INFO - Mean Test Score: 0.05572916666666666
+2025-02-20 22:52:01,556 - utils - INFO - Rank: 11
+2025-02-20 22:52:01,556 - utils - INFO - Parameters: {'estimator__C': 0.5, 'estimator__class_weight': None, 'estimator__kernel': 'rbf'}
+2025-02-20 22:52:01,557 - utils - INFO - Mean Test Score: 0.028645833333333332
+2025-02-20 22:52:01,557 - utils - INFO - Rank: 12
+2025-02-20 22:52:01,557 - utils - INFO - Parameters: {'estimator__C': 0.5, 'estimator__class_weight': 'balanced', 'estimator__kernel': 'linear'}
+2025-02-20 22:52:01,558 - utils - INFO - Mean Test Score: 0.25468749999999996
+2025-02-20 22:52:01,558 - utils - INFO - Rank: 1
+2025-02-20 22:52:01,558 - utils - INFO - Parameters: {'estimator__C': 0.5, 'estimator__class_weight': 'balanced', 'estimator__kernel': 'rbf'}
+2025-02-20 22:52:01,558 - utils - INFO - Mean Test Score: 0.14583333333333331
+2025-02-20 22:52:01,559 - utils - INFO - Rank: 7
+2025-02-20 22:52:01,559 - utils - INFO - Parameters: {'estimator__C': 1.0, 'estimator__class_weight': None, 'estimator__kernel': 'linear'}
+2025-02-20 22:52:01,559 - utils - INFO - Mean Test Score: 0.17760416666666665
+2025-02-20 22:52:01,559 - utils - INFO - Rank: 5
+2025-02-20 22:52:01,559 - utils - INFO - Parameters: {'estimator__C': 1.0, 'estimator__class_weight': None, 'estimator__kernel': 'rbf'}
+2025-02-20 22:52:01,560 - utils - INFO - Mean Test Score: 0.09322916666666667
+2025-02-20 22:52:01,560 - utils - INFO - Rank: 10
+2025-02-20 22:52:01,560 - utils - INFO - Parameters: {'estimator__C': 1.0, 'estimator__class_weight': 'balanced', 'estimator__kernel': 'linear'}
+2025-02-20 22:52:01,560 - utils - INFO - Mean Test Score: 0.22760416666666666
+2025-02-20 22:52:01,560 - utils - INFO - Rank: 2
+2025-02-20 22:52:01,560 - utils - INFO - Parameters: {'estimator__C': 1.0, 'estimator__class_weight': 'balanced', 'estimator__kernel': 'rbf'}
+2025-02-20 22:52:01,561 - utils - INFO - Mean Test Score: 0.14999999999999997
+2025-02-20 22:52:01,561 - utils - INFO - Rank: 6
+2025-02-20 22:52:01,561 - utils - INFO - Parameters: {'estimator__C': 10.0, 'estimator__class_weight': None, 'estimator__kernel': 'linear'}
+2025-02-20 22:52:01,561 - utils - INFO - Mean Test Score: 0.2171875
+2025-02-20 22:52:01,561 - utils - INFO - Rank: 4
+2025-02-20 22:52:01,561 - utils - INFO - Parameters: {'estimator__C': 10.0, 'estimator__class_weight': None, 'estimator__kernel': 'rbf'}
+2025-02-20 22:52:01,562 - utils - INFO - Mean Test Score: 0.13385416666666666
+2025-02-20 22:52:01,562 - utils - INFO - Rank: 9
+2025-02-20 22:52:01,562 - utils - INFO - Parameters: {'estimator__C': 10.0, 'estimator__class_weight': 'balanced', 'estimator__kernel': 'linear'}
+2025-02-20 22:52:01,562 - utils - INFO - Mean Test Score: 0.21875
+2025-02-20 22:52:01,562 - utils - INFO - Rank: 3
+2025-02-20 22:52:01,562 - utils - INFO - Parameters: {'estimator__C': 10.0, 'estimator__class_weight': 'balanced', 'estimator__kernel': 'rbf'}
+2025-02-20 22:52:01,562 - utils - INFO - Mean Test Score: 0.134375
+2025-02-20 22:52:01,563 - utils - INFO - Rank: 8
+2025-02-20 22:52:01,563 - model_manager - INFO - Results for SVM: {'accuracy': 0.3333333333333333, 'precision_micro': 0.6438631790744467, 'precision_macro': 0.5835741798914047, 'recall_micro': 0.48338368580060426, 'recall_macro': 0.3711634160742359, 'f1_micro': 0.5522001725625539, 'f1_macro': 0.443304583970173}
+2025-02-20 22:52:01,563 - model_manager - INFO - 
+=== Training Random Forest ===
+2025-02-20 23:22:40,732 - utils - INFO - 
+Grid Search Results:
+2025-02-20 23:22:40,733 - utils - INFO - Parameters: {'estimator__class_weight': None, 'estimator__max_depth': None, 'estimator__min_samples_split': 2, 'estimator__n_estimators': 200}
+2025-02-20 23:22:40,733 - utils - INFO - Mean Test Score: 0.14739583333333334
+2025-02-20 23:22:40,733 - utils - INFO - Rank: 10
+2025-02-20 23:22:40,733 - utils - INFO - Parameters: {'estimator__class_weight': None, 'estimator__max_depth': None, 'estimator__min_samples_split': 2, 'estimator__n_estimators': 300}
+2025-02-20 23:22:40,733 - utils - INFO - Mean Test Score: 0.15
+2025-02-20 23:22:40,734 - utils - INFO - Rank: 6
+2025-02-20 23:22:40,734 - utils - INFO - Parameters: {'estimator__class_weight': None, 'estimator__max_depth': None, 'estimator__min_samples_split': 5, 'estimator__n_estimators': 200}
+2025-02-20 23:22:40,734 - utils - INFO - Mean Test Score: 0.14947916666666666
+2025-02-20 23:22:40,734 - utils - INFO - Rank: 7
+2025-02-20 23:22:40,734 - utils - INFO - Parameters: {'estimator__class_weight': None, 'estimator__max_depth': None, 'estimator__min_samples_split': 5, 'estimator__n_estimators': 300}
+2025-02-20 23:22:40,734 - utils - INFO - Mean Test Score: 0.14947916666666666
+2025-02-20 23:22:40,734 - utils - INFO - Rank: 7
+2025-02-20 23:22:40,734 - utils - INFO - Parameters: {'estimator__class_weight': None, 'estimator__max_depth': 10, 'estimator__min_samples_split': 2, 'estimator__n_estimators': 200}
+2025-02-20 23:22:40,735 - utils - INFO - Mean Test Score: 0.003645833333333333
+2025-02-20 23:22:40,735 - utils - INFO - Rank: 21
+2025-02-20 23:22:40,735 - utils - INFO - Parameters: {'estimator__class_weight': None, 'estimator__max_depth': 10, 'estimator__min_samples_split': 2, 'estimator__n_estimators': 300}
+2025-02-20 23:22:40,735 - utils - INFO - Mean Test Score: 0.003645833333333333
+2025-02-20 23:22:40,735 - utils - INFO - Rank: 21
+2025-02-20 23:22:40,735 - utils - INFO - Parameters: {'estimator__class_weight': None, 'estimator__max_depth': 10, 'estimator__min_samples_split': 5, 'estimator__n_estimators': 200}
+2025-02-20 23:22:40,735 - utils - INFO - Mean Test Score: 0.003645833333333333
+2025-02-20 23:22:40,735 - utils - INFO - Rank: 21
+2025-02-20 23:22:40,737 - utils - INFO - Parameters: {'estimator__class_weight': None, 'estimator__max_depth': 10, 'estimator__min_samples_split': 5, 'estimator__n_estimators': 300}
+2025-02-20 23:22:40,737 - utils - INFO - Mean Test Score: 0.003645833333333333
+2025-02-20 23:22:40,737 - utils - INFO - Rank: 21
+2025-02-20 23:22:40,737 - utils - INFO - Parameters: {'estimator__class_weight': None, 'estimator__max_depth': 20, 'estimator__min_samples_split': 2, 'estimator__n_estimators': 200}
+2025-02-20 23:22:40,737 - utils - INFO - Mean Test Score: 0.010416666666666668
+2025-02-20 23:22:40,737 - utils - INFO - Rank: 17
+2025-02-20 23:22:40,737 - utils - INFO - Parameters: {'estimator__class_weight': None, 'estimator__max_depth': 20, 'estimator__min_samples_split': 2, 'estimator__n_estimators': 300}
+2025-02-20 23:22:40,738 - utils - INFO - Mean Test Score: 0.009895833333333335
+2025-02-20 23:22:40,738 - utils - INFO - Rank: 19
+2025-02-20 23:22:40,738 - utils - INFO - Parameters: {'estimator__class_weight': None, 'estimator__max_depth': 20, 'estimator__min_samples_split': 5, 'estimator__n_estimators': 200}
+2025-02-20 23:22:40,738 - utils - INFO - Mean Test Score: 0.010416666666666668
+2025-02-20 23:22:40,738 - utils - INFO - Rank: 17
+2025-02-20 23:22:40,738 - utils - INFO - Parameters: {'estimator__class_weight': None, 'estimator__max_depth': 20, 'estimator__min_samples_split': 5, 'estimator__n_estimators': 300}
+2025-02-20 23:22:40,738 - utils - INFO - Mean Test Score: 0.009895833333333335
+2025-02-20 23:22:40,739 - utils - INFO - Rank: 19
+2025-02-20 23:22:40,739 - utils - INFO - Parameters: {'estimator__class_weight': 'balanced', 'estimator__max_depth': None, 'estimator__min_samples_split': 2, 'estimator__n_estimators': 200}
+2025-02-20 23:22:40,739 - utils - INFO - Mean Test Score: 0.15260416666666668
+2025-02-20 23:22:40,739 - utils - INFO - Rank: 3
+2025-02-20 23:22:40,739 - utils - INFO - Parameters: {'estimator__class_weight': 'balanced', 'estimator__max_depth': None, 'estimator__min_samples_split': 2, 'estimator__n_estimators': 300}
+2025-02-20 23:22:40,739 - utils - INFO - Mean Test Score: 0.1515625
+2025-02-20 23:22:40,739 - utils - INFO - Rank: 5
+2025-02-20 23:22:40,739 - utils - INFO - Parameters: {'estimator__class_weight': 'balanced', 'estimator__max_depth': None, 'estimator__min_samples_split': 5, 'estimator__n_estimators': 200}
+2025-02-20 23:22:40,740 - utils - INFO - Mean Test Score: 0.16145833333333331
+2025-02-20 23:22:40,740 - utils - INFO - Rank: 1
+2025-02-20 23:22:40,740 - utils - INFO - Parameters: {'estimator__class_weight': 'balanced', 'estimator__max_depth': None, 'estimator__min_samples_split': 5, 'estimator__n_estimators': 300}
+2025-02-20 23:22:40,740 - utils - INFO - Mean Test Score: 0.16145833333333331
+2025-02-20 23:22:40,740 - utils - INFO - Rank: 1
+2025-02-20 23:22:40,740 - utils - INFO - Parameters: {'estimator__class_weight': 'balanced', 'estimator__max_depth': 10, 'estimator__min_samples_split': 2, 'estimator__n_estimators': 200}
+2025-02-20 23:22:40,741 - utils - INFO - Mean Test Score: 0.14114583333333333
+2025-02-20 23:22:40,741 - utils - INFO - Rank: 14
+2025-02-20 23:22:40,741 - utils - INFO - Parameters: {'estimator__class_weight': 'balanced', 'estimator__max_depth': 10, 'estimator__min_samples_split': 2, 'estimator__n_estimators': 300}
+2025-02-20 23:22:40,741 - utils - INFO - Mean Test Score: 0.14010416666666664
+2025-02-20 23:22:40,741 - utils - INFO - Rank: 15
+2025-02-20 23:22:40,743 - utils - INFO - Parameters: {'estimator__class_weight': 'balanced', 'estimator__max_depth': 10, 'estimator__min_samples_split': 5, 'estimator__n_estimators': 200}
+2025-02-20 23:22:40,743 - utils - INFO - Mean Test Score: 0.1421875
+2025-02-20 23:22:40,743 - utils - INFO - Rank: 12
+2025-02-20 23:22:40,743 - utils - INFO - Parameters: {'estimator__class_weight': 'balanced', 'estimator__max_depth': 10, 'estimator__min_samples_split': 5, 'estimator__n_estimators': 300}
+2025-02-20 23:22:40,743 - utils - INFO - Mean Test Score: 0.14479166666666668
+2025-02-20 23:22:40,743 - utils - INFO - Rank: 11
+2025-02-20 23:22:40,743 - utils - INFO - Parameters: {'estimator__class_weight': 'balanced', 'estimator__max_depth': 20, 'estimator__min_samples_split': 2, 'estimator__n_estimators': 200}
+2025-02-20 23:22:40,743 - utils - INFO - Mean Test Score: 0.13802083333333331
+2025-02-20 23:22:40,743 - utils - INFO - Rank: 16
+2025-02-20 23:22:40,744 - utils - INFO - Parameters: {'estimator__class_weight': 'balanced', 'estimator__max_depth': 20, 'estimator__min_samples_split': 2, 'estimator__n_estimators': 300}
+2025-02-20 23:22:40,744 - utils - INFO - Mean Test Score: 0.14166666666666666
+2025-02-20 23:22:40,744 - utils - INFO - Rank: 13
+2025-02-20 23:22:40,744 - utils - INFO - Parameters: {'estimator__class_weight': 'balanced', 'estimator__max_depth': 20, 'estimator__min_samples_split': 5, 'estimator__n_estimators': 200}
+2025-02-20 23:22:40,744 - utils - INFO - Mean Test Score: 0.1484375
+2025-02-20 23:22:40,744 - utils - INFO - Rank: 9
+2025-02-20 23:22:40,744 - utils - INFO - Parameters: {'estimator__class_weight': 'balanced', 'estimator__max_depth': 20, 'estimator__min_samples_split': 5, 'estimator__n_estimators': 300}
+2025-02-20 23:22:40,744 - utils - INFO - Mean Test Score: 0.15208333333333332
+2025-02-20 23:22:40,746 - utils - INFO - Rank: 4
+2025-02-20 23:22:40,746 - model_manager - INFO - Results for Random Forest: {'accuracy': 0.18541666666666667, 'precision_micro': 0.6971830985915493, 'precision_macro': 0.6144439852443709, 'recall_micro': 0.2990936555891239, 'recall_macro': 0.23358686354784358, 'f1_micro': 0.4186046511627907, 'f1_macro': 0.32894923693554884}
+2025-02-20 23:22:40,746 - model_manager - INFO - 
+=== Training Naive Bayes ===
+2025-02-20 23:22:41,311 - utils - INFO - 
+Grid Search Results:
+2025-02-20 23:22:41,311 - utils - INFO - Parameters: {'estimator__alpha': 0.05, 'estimator__fit_prior': True}
+2025-02-20 23:22:41,312 - utils - INFO - Mean Test Score: 0.18072916666666666
+2025-02-20 23:22:41,312 - utils - INFO - Rank: 3
+2025-02-20 23:22:41,313 - utils - INFO - Parameters: {'estimator__alpha': 0.05, 'estimator__fit_prior': False}
+2025-02-20 23:22:41,313 - utils - INFO - Mean Test Score: 0.09635416666666666
+2025-02-20 23:22:41,314 - utils - INFO - Rank: 6
+2025-02-20 23:22:41,314 - utils - INFO - Parameters: {'estimator__alpha': 0.1, 'estimator__fit_prior': True}
+2025-02-20 23:22:41,314 - utils - INFO - Mean Test Score: 0.24739583333333334
+2025-02-20 23:22:41,314 - utils - INFO - Rank: 2
+2025-02-20 23:22:41,315 - utils - INFO - Parameters: {'estimator__alpha': 0.1, 'estimator__fit_prior': False}
+2025-02-20 23:22:41,315 - utils - INFO - Mean Test Score: 0.10104166666666665
+2025-02-20 23:22:41,315 - utils - INFO - Rank: 5
+2025-02-20 23:22:41,315 - utils - INFO - Parameters: {'estimator__alpha': 0.15, 'estimator__fit_prior': True}
+2025-02-20 23:22:41,315 - utils - INFO - Mean Test Score: 0.26927083333333335
+2025-02-20 23:22:41,316 - utils - INFO - Rank: 1
+2025-02-20 23:22:41,316 - utils - INFO - Parameters: {'estimator__alpha': 0.15, 'estimator__fit_prior': False}
+2025-02-20 23:22:41,316 - utils - INFO - Mean Test Score: 0.10572916666666668
+2025-02-20 23:22:41,316 - utils - INFO - Rank: 4
+2025-02-20 23:22:41,317 - model_manager - INFO - Results for Naive Bayes: {'accuracy': 0.3229166666666667, 'precision_micro': 0.739946380697051, 'precision_macro': 0.6950807877568441, 'recall_micro': 0.4169184290030212, 'recall_macro': 0.30487997415945595, 'f1_micro': 0.5333333333333333, 'f1_macro': 0.40396500890316445}
+2025-02-20 23:22:41,322 - model_persistence - INFO - Saving model components...
+2025-02-20 23:22:41,506 - model_persistence - INFO - Model components saved successfully
+2025-02-20 23:22:41,506 - __main__ - INFO - 
+Final Model Comparison:
+2025-02-20 23:22:41,507 - __main__ - INFO -                      accuracy  precision_micro  precision_macro  recall_micro  recall_macro  f1_micro  f1_macro
+SVM                  0.333333         0.643863         0.583574      0.483384      0.371163  0.552200  0.443305
+Naive Bayes          0.322917         0.739946         0.695081      0.416918      0.304880  0.533333  0.403965
+Linear SVC           0.316667         0.644764         0.625532      0.474320      0.377468  0.546562  0.457619
+Logistic Regression  0.304167         0.603053         0.544999      0.477341      0.388178  0.532884  0.440892
+Random Forest        0.185417         0.697183         0.614444      0.299094      0.233587  0.418605  0.328949
+2025-02-20 23:22:41,522 - __main__ - INFO - 
+Best performing model: SVM
+2025-02-21 17:55:46,861 - __main__ - INFO - Preparing data...
+2025-02-21 17:55:47,225 - __main__ - INFO - Saved 10 categories to bestmodel\categories.joblib
+2025-02-21 17:55:47,226 - __main__ - INFO - Initializing model training...
+2025-02-21 17:55:47,226 - model_manager - INFO - Training and evaluating models...
+2025-02-21 17:55:47,226 - model_manager - INFO - 
+=== Training Logistic Regression ===
+2025-02-21 18:00:59,097 - utils - INFO - 
+Grid Search Results:
+2025-02-21 18:00:59,097 - utils - INFO - Parameters: {'estimator__C': 25, 'estimator__penalty': 'l1', 'estimator__solver': 'liblinear'}
+2025-02-21 18:00:59,098 - utils - INFO - Mean Test Score: 0.259375
+2025-02-21 18:00:59,098 - utils - INFO - Rank: 1
+2025-02-21 18:00:59,098 - utils - INFO - Parameters: {'estimator__C': 30, 'estimator__penalty': 'l1', 'estimator__solver': 'liblinear'}
+2025-02-21 18:00:59,099 - utils - INFO - Mean Test Score: 0.259375
+2025-02-21 18:00:59,099 - utils - INFO - Rank: 1
+2025-02-21 18:00:59,099 - utils - INFO - Parameters: {'estimator__C': 40, 'estimator__penalty': 'l1', 'estimator__solver': 'liblinear'}
+2025-02-21 18:00:59,099 - utils - INFO - Mean Test Score: 0.2588541666666667
+2025-02-21 18:00:59,099 - utils - INFO - Rank: 3
+2025-02-21 18:00:59,099 - utils - INFO - Parameters: {'estimator__C': 60, 'estimator__penalty': 'l1', 'estimator__solver': 'liblinear'}
+2025-02-21 18:00:59,100 - utils - INFO - Mean Test Score: 0.25625
+2025-02-21 18:00:59,100 - utils - INFO - Rank: 5
+2025-02-21 18:00:59,100 - utils - INFO - Parameters: {'estimator__C': 100, 'estimator__penalty': 'l1', 'estimator__solver': 'liblinear'}
+2025-02-21 18:00:59,100 - utils - INFO - Mean Test Score: 0.2567708333333333
+2025-02-21 18:00:59,100 - utils - INFO - Rank: 4
+2025-02-21 18:00:59,100 - model_manager - INFO - Results for Logistic Regression: {'accuracy': 0.3020833333333333, 'precision_micro': 0.6030534351145038, 'precision_macro': 0.5499922154788983, 'recall_micro': 0.4773413897280967, 'recall_macro': 0.38699888965878015, 'f1_micro': 0.5328836424957841, 'f1_macro': 0.44143913957689807}
+2025-02-21 18:00:59,101 - model_manager - INFO - 
+=== Training Linear SVC ===
+2025-02-21 18:01:01,535 - utils - INFO - 
+Grid Search Results:
+2025-02-21 18:01:01,536 - utils - INFO - Parameters: {'estimator__C': 15, 'estimator__dual': False, 'estimator__loss': 'squared_hinge', 'estimator__penalty': 'l1'}
+2025-02-21 18:01:01,536 - utils - INFO - Mean Test Score: 0.25677083333333334
+2025-02-21 18:01:01,536 - utils - INFO - Rank: 1
+2025-02-21 18:01:01,537 - utils - INFO - Parameters: {'estimator__C': 20, 'estimator__dual': False, 'estimator__loss': 'squared_hinge', 'estimator__penalty': 'l1'}
+2025-02-21 18:01:01,537 - utils - INFO - Mean Test Score: 0.2541666666666667
+2025-02-21 18:01:01,538 - utils - INFO - Rank: 2
+2025-02-21 18:01:01,538 - utils - INFO - Parameters: {'estimator__C': 50, 'estimator__dual': False, 'estimator__loss': 'squared_hinge', 'estimator__penalty': 'l1'}
+2025-02-21 18:01:01,538 - utils - INFO - Mean Test Score: 0.2489583333333333
+2025-02-21 18:01:01,538 - utils - INFO - Rank: 3
+2025-02-21 18:01:01,538 - model_manager - INFO - Results for Linear SVC: {'accuracy': 0.30833333333333335, 'precision_micro': 0.640495867768595, 'precision_macro': 0.5952562355186044, 'recall_micro': 0.46827794561933533, 'recall_macro': 0.3703859560237877, 'f1_micro': 0.5410122164048866, 'f1_macro': 0.4451639187234389}
+2025-02-21 18:01:01,539 - model_manager - INFO - 
+=== Training SVM ===
+2025-02-21 18:02:17,797 - utils - INFO - 
+Grid Search Results:
+2025-02-21 18:02:17,797 - utils - INFO - Parameters: {'estimator__C': 0.1, 'estimator__class_weight': 'balanced', 'estimator__kernel': 'linear'}
+2025-02-21 18:02:17,797 - utils - INFO - Mean Test Score: 0.13020833333333334
+2025-02-21 18:02:17,798 - utils - INFO - Rank: 4
+2025-02-21 18:02:17,798 - utils - INFO - Parameters: {'estimator__C': 0.25, 'estimator__class_weight': 'balanced', 'estimator__kernel': 'linear'}
+2025-02-21 18:02:17,798 - utils - INFO - Mean Test Score: 0.21302083333333335
+2025-02-21 18:02:17,798 - utils - INFO - Rank: 3
+2025-02-21 18:02:17,799 - utils - INFO - Parameters: {'estimator__C': 0.75, 'estimator__class_weight': 'balanced', 'estimator__kernel': 'linear'}
+2025-02-21 18:02:17,799 - utils - INFO - Mean Test Score: 0.246875
+2025-02-21 18:02:17,799 - utils - INFO - Rank: 1
+2025-02-21 18:02:17,799 - utils - INFO - Parameters: {'estimator__C': 1, 'estimator__class_weight': 'balanced', 'estimator__kernel': 'linear'}
+2025-02-21 18:02:17,799 - utils - INFO - Mean Test Score: 0.22760416666666666
+2025-02-21 18:02:17,799 - utils - INFO - Rank: 2
+2025-02-21 18:02:17,800 - model_manager - INFO - Results for SVM: {'accuracy': 0.33541666666666664, 'precision_micro': 0.6568047337278107, 'precision_macro': 0.6017504728742731, 'recall_micro': 0.5030211480362538, 'recall_macro': 0.3805687166560071, 'f1_micro': 0.5697177074422584, 'f1_macro': 0.4517123188768838}
+2025-02-21 18:02:17,800 - model_manager - INFO - 
+=== Training Random Forest ===
+2025-02-21 19:52:56,473 - utils - INFO - 
+Grid Search Results:
+2025-02-21 19:52:56,474 - utils - INFO - Parameters: {'estimator__class_weight': 'balanced', 'estimator__max_depth': None, 'estimator__min_samples_split': 3, 'estimator__n_estimators': 100}
+2025-02-21 19:52:56,474 - utils - INFO - Mean Test Score: 0.159375
+2025-02-21 19:52:56,475 - utils - INFO - Rank: 17
+2025-02-21 19:52:56,475 - utils - INFO - Parameters: {'estimator__class_weight': 'balanced', 'estimator__max_depth': None, 'estimator__min_samples_split': 3, 'estimator__n_estimators': 300}
+2025-02-21 19:52:56,476 - utils - INFO - Mean Test Score: 0.159375
+2025-02-21 19:52:56,476 - utils - INFO - Rank: 17
+2025-02-21 19:52:56,476 - utils - INFO - Parameters: {'estimator__class_weight': 'balanced', 'estimator__max_depth': None, 'estimator__min_samples_split': 3, 'estimator__n_estimators': 400}
+2025-02-21 19:52:56,477 - utils - INFO - Mean Test Score: 0.15937500000000002
+2025-02-21 19:52:56,477 - utils - INFO - Rank: 16
+2025-02-21 19:52:56,477 - utils - INFO - Parameters: {'estimator__class_weight': 'balanced', 'estimator__max_depth': None, 'estimator__min_samples_split': 3, 'estimator__n_estimators': 500}
+2025-02-21 19:52:56,478 - utils - INFO - Mean Test Score: 0.159375
+2025-02-21 19:52:56,478 - utils - INFO - Rank: 17
+2025-02-21 19:52:56,478 - utils - INFO - Parameters: {'estimator__class_weight': 'balanced', 'estimator__max_depth': None, 'estimator__min_samples_split': 3, 'estimator__n_estimators': 1000}
+2025-02-21 19:52:56,478 - utils - INFO - Mean Test Score: 0.1609375
+2025-02-21 19:52:56,478 - utils - INFO - Rank: 13
+2025-02-21 19:52:56,479 - utils - INFO - Parameters: {'estimator__class_weight': 'balanced', 'estimator__max_depth': None, 'estimator__min_samples_split': 5, 'estimator__n_estimators': 100}
+2025-02-21 19:52:56,479 - utils - INFO - Mean Test Score: 0.15885416666666669
+2025-02-21 19:52:56,479 - utils - INFO - Rank: 20
+2025-02-21 19:52:56,479 - utils - INFO - Parameters: {'estimator__class_weight': 'balanced', 'estimator__max_depth': None, 'estimator__min_samples_split': 5, 'estimator__n_estimators': 300}
+2025-02-21 19:52:56,480 - utils - INFO - Mean Test Score: 0.16145833333333331
+2025-02-21 19:52:56,480 - utils - INFO - Rank: 12
+2025-02-21 19:52:56,480 - utils - INFO - Parameters: {'estimator__class_weight': 'balanced', 'estimator__max_depth': None, 'estimator__min_samples_split': 5, 'estimator__n_estimators': 400}
+2025-02-21 19:52:56,480 - utils - INFO - Mean Test Score: 0.1625
+2025-02-21 19:52:56,481 - utils - INFO - Rank: 6
+2025-02-21 19:52:56,481 - utils - INFO - Parameters: {'estimator__class_weight': 'balanced', 'estimator__max_depth': None, 'estimator__min_samples_split': 5, 'estimator__n_estimators': 500}
+2025-02-21 19:52:56,481 - utils - INFO - Mean Test Score: 0.16197916666666665
+2025-02-21 19:52:56,481 - utils - INFO - Rank: 10
+2025-02-21 19:52:56,481 - utils - INFO - Parameters: {'estimator__class_weight': 'balanced', 'estimator__max_depth': None, 'estimator__min_samples_split': 5, 'estimator__n_estimators': 1000}
+2025-02-21 19:52:56,481 - utils - INFO - Mean Test Score: 0.16197916666666667
+2025-02-21 19:52:56,482 - utils - INFO - Rank: 9
+2025-02-21 19:52:56,482 - utils - INFO - Parameters: {'estimator__class_weight': 'balanced', 'estimator__max_depth': None, 'estimator__min_samples_split': 7, 'estimator__n_estimators': 100}
+2025-02-21 19:52:56,482 - utils - INFO - Mean Test Score: 0.16041666666666665
+2025-02-21 19:52:56,482 - utils - INFO - Rank: 15
+2025-02-21 19:52:56,482 - utils - INFO - Parameters: {'estimator__class_weight': 'balanced', 'estimator__max_depth': None, 'estimator__min_samples_split': 7, 'estimator__n_estimators': 300}
+2025-02-21 19:52:56,482 - utils - INFO - Mean Test Score: 0.16197916666666665
+2025-02-21 19:52:56,482 - utils - INFO - Rank: 10
+2025-02-21 19:52:56,483 - utils - INFO - Parameters: {'estimator__class_weight': 'balanced', 'estimator__max_depth': None, 'estimator__min_samples_split': 7, 'estimator__n_estimators': 400}
+2025-02-21 19:52:56,483 - utils - INFO - Mean Test Score: 0.16406249999999997
+2025-02-21 19:52:56,483 - utils - INFO - Rank: 3
+2025-02-21 19:52:56,483 - utils - INFO - Parameters: {'estimator__class_weight': 'balanced', 'estimator__max_depth': None, 'estimator__min_samples_split': 7, 'estimator__n_estimators': 500}
+2025-02-21 19:52:56,483 - utils - INFO - Mean Test Score: 0.1625
+2025-02-21 19:52:56,483 - utils - INFO - Rank: 6
+2025-02-21 19:52:56,484 - utils - INFO - Parameters: {'estimator__class_weight': 'balanced', 'estimator__max_depth': None, 'estimator__min_samples_split': 7, 'estimator__n_estimators': 1000}
+2025-02-21 19:52:56,484 - utils - INFO - Mean Test Score: 0.16354166666666667
+2025-02-21 19:52:56,484 - utils - INFO - Rank: 5
+2025-02-21 19:52:56,484 - utils - INFO - Parameters: {'estimator__class_weight': 'balanced', 'estimator__max_depth': None, 'estimator__min_samples_split': 10, 'estimator__n_estimators': 100}
+2025-02-21 19:52:56,484 - utils - INFO - Mean Test Score: 0.1609375
+2025-02-21 19:52:56,484 - utils - INFO - Rank: 13
+2025-02-21 19:52:56,484 - utils - INFO - Parameters: {'estimator__class_weight': 'balanced', 'estimator__max_depth': None, 'estimator__min_samples_split': 10, 'estimator__n_estimators': 300}
+2025-02-21 19:52:56,485 - utils - INFO - Mean Test Score: 0.16249999999999998
+2025-02-21 19:52:56,485 - utils - INFO - Rank: 8
+2025-02-21 19:52:56,485 - utils - INFO - Parameters: {'estimator__class_weight': 'balanced', 'estimator__max_depth': None, 'estimator__min_samples_split': 10, 'estimator__n_estimators': 400}
+2025-02-21 19:52:56,485 - utils - INFO - Mean Test Score: 0.16458333333333333
+2025-02-21 19:52:56,485 - utils - INFO - Rank: 2
+2025-02-21 19:52:56,486 - utils - INFO - Parameters: {'estimator__class_weight': 'balanced', 'estimator__max_depth': None, 'estimator__min_samples_split': 10, 'estimator__n_estimators': 500}
+2025-02-21 19:52:56,486 - utils - INFO - Mean Test Score: 0.16406249999999997
+2025-02-21 19:52:56,486 - utils - INFO - Rank: 3
+2025-02-21 19:52:56,486 - utils - INFO - Parameters: {'estimator__class_weight': 'balanced', 'estimator__max_depth': None, 'estimator__min_samples_split': 10, 'estimator__n_estimators': 1000}
+2025-02-21 19:52:56,486 - utils - INFO - Mean Test Score: 0.16562499999999997
+2025-02-21 19:52:56,486 - utils - INFO - Rank: 1
+2025-02-21 19:52:56,486 - utils - INFO - Parameters: {'estimator__class_weight': 'balanced', 'estimator__max_depth': 10, 'estimator__min_samples_split': 3, 'estimator__n_estimators': 100}
+2025-02-21 19:52:56,487 - utils - INFO - Mean Test Score: 0.14427083333333332
+2025-02-21 19:52:56,487 - utils - INFO - Rank: 39
+2025-02-21 19:52:56,487 - utils - INFO - Parameters: {'estimator__class_weight': 'balanced', 'estimator__max_depth': 10, 'estimator__min_samples_split': 3, 'estimator__n_estimators': 300}
+2025-02-21 19:52:56,487 - utils - INFO - Mean Test Score: 0.14322916666666666
+2025-02-21 19:52:56,487 - utils - INFO - Rank: 40
+2025-02-21 19:52:56,487 - utils - INFO - Parameters: {'estimator__class_weight': 'balanced', 'estimator__max_depth': 10, 'estimator__min_samples_split': 3, 'estimator__n_estimators': 400}
+2025-02-21 19:52:56,487 - utils - INFO - Mean Test Score: 0.14635416666666665
+2025-02-21 19:52:56,488 - utils - INFO - Rank: 32
+2025-02-21 19:52:56,488 - utils - INFO - Parameters: {'estimator__class_weight': 'balanced', 'estimator__max_depth': 10, 'estimator__min_samples_split': 3, 'estimator__n_estimators': 500}
+2025-02-21 19:52:56,488 - utils - INFO - Mean Test Score: 0.14739583333333334
+2025-02-21 19:52:56,488 - utils - INFO - Rank: 31
+2025-02-21 19:52:56,488 - utils - INFO - Parameters: {'estimator__class_weight': 'balanced', 'estimator__max_depth': 10, 'estimator__min_samples_split': 3, 'estimator__n_estimators': 1000}
+2025-02-21 19:52:56,489 - utils - INFO - Mean Test Score: 0.14895833333333333
+2025-02-21 19:52:56,489 - utils - INFO - Rank: 27
+2025-02-21 19:52:56,489 - utils - INFO - Parameters: {'estimator__class_weight': 'balanced', 'estimator__max_depth': 10, 'estimator__min_samples_split': 5, 'estimator__n_estimators': 100}
+2025-02-21 19:52:56,489 - utils - INFO - Mean Test Score: 0.14635416666666665
+2025-02-21 19:52:56,489 - utils - INFO - Rank: 32
+2025-02-21 19:52:56,489 - utils - INFO - Parameters: {'estimator__class_weight': 'balanced', 'estimator__max_depth': 10, 'estimator__min_samples_split': 5, 'estimator__n_estimators': 300}
+2025-02-21 19:52:56,489 - utils - INFO - Mean Test Score: 0.14479166666666668
+2025-02-21 19:52:56,490 - utils - INFO - Rank: 38
+2025-02-21 19:52:56,490 - utils - INFO - Parameters: {'estimator__class_weight': 'balanced', 'estimator__max_depth': 10, 'estimator__min_samples_split': 5, 'estimator__n_estimators': 400}
+2025-02-21 19:52:56,490 - utils - INFO - Mean Test Score: 0.14635416666666665
+2025-02-21 19:52:56,490 - utils - INFO - Rank: 32
+2025-02-21 19:52:56,490 - utils - INFO - Parameters: {'estimator__class_weight': 'balanced', 'estimator__max_depth': 10, 'estimator__min_samples_split': 5, 'estimator__n_estimators': 500}
+2025-02-21 19:52:56,490 - utils - INFO - Mean Test Score: 0.15052083333333333
+2025-02-21 19:52:56,490 - utils - INFO - Rank: 24
+2025-02-21 19:52:56,490 - utils - INFO - Parameters: {'estimator__class_weight': 'balanced', 'estimator__max_depth': 10, 'estimator__min_samples_split': 5, 'estimator__n_estimators': 1000}
+2025-02-21 19:52:56,491 - utils - INFO - Mean Test Score: 0.14895833333333333
+2025-02-21 19:52:56,491 - utils - INFO - Rank: 27
+2025-02-21 19:52:56,491 - utils - INFO - Parameters: {'estimator__class_weight': 'balanced', 'estimator__max_depth': 10, 'estimator__min_samples_split': 7, 'estimator__n_estimators': 100}
+2025-02-21 19:52:56,491 - utils - INFO - Mean Test Score: 0.1484375
+2025-02-21 19:52:56,491 - utils - INFO - Rank: 29
+2025-02-21 19:52:56,491 - utils - INFO - Parameters: {'estimator__class_weight': 'balanced', 'estimator__max_depth': 10, 'estimator__min_samples_split': 7, 'estimator__n_estimators': 300}
+2025-02-21 19:52:56,491 - utils - INFO - Mean Test Score: 0.1453125
+2025-02-21 19:52:56,492 - utils - INFO - Rank: 37
+2025-02-21 19:52:56,492 - utils - INFO - Parameters: {'estimator__class_weight': 'balanced', 'estimator__max_depth': 10, 'estimator__min_samples_split': 7, 'estimator__n_estimators': 400}
+2025-02-21 19:52:56,492 - utils - INFO - Mean Test Score: 0.14583333333333331
+2025-02-21 19:52:56,492 - utils - INFO - Rank: 36
+2025-02-21 19:52:56,492 - utils - INFO - Parameters: {'estimator__class_weight': 'balanced', 'estimator__max_depth': 10, 'estimator__min_samples_split': 7, 'estimator__n_estimators': 500}
+2025-02-21 19:52:56,492 - utils - INFO - Mean Test Score: 0.15052083333333333
+2025-02-21 19:52:56,492 - utils - INFO - Rank: 24
+2025-02-21 19:52:56,492 - utils - INFO - Parameters: {'estimator__class_weight': 'balanced', 'estimator__max_depth': 10, 'estimator__min_samples_split': 7, 'estimator__n_estimators': 1000}
+2025-02-21 19:52:56,492 - utils - INFO - Mean Test Score: 0.15104166666666669
+2025-02-21 19:52:56,492 - utils - INFO - Rank: 22
+2025-02-21 19:52:56,493 - utils - INFO - Parameters: {'estimator__class_weight': 'balanced', 'estimator__max_depth': 10, 'estimator__min_samples_split': 10, 'estimator__n_estimators': 100}
+2025-02-21 19:52:56,493 - utils - INFO - Mean Test Score: 0.15
+2025-02-21 19:52:56,493 - utils - INFO - Rank: 26
+2025-02-21 19:52:56,493 - utils - INFO - Parameters: {'estimator__class_weight': 'balanced', 'estimator__max_depth': 10, 'estimator__min_samples_split': 10, 'estimator__n_estimators': 300}
+2025-02-21 19:52:56,493 - utils - INFO - Mean Test Score: 0.14583333333333334
+2025-02-21 19:52:56,493 - utils - INFO - Rank: 35
+2025-02-21 19:52:56,493 - utils - INFO - Parameters: {'estimator__class_weight': 'balanced', 'estimator__max_depth': 10, 'estimator__min_samples_split': 10, 'estimator__n_estimators': 400}
+2025-02-21 19:52:56,493 - utils - INFO - Mean Test Score: 0.14791666666666667
+2025-02-21 19:52:56,493 - utils - INFO - Rank: 30
+2025-02-21 19:52:56,493 - utils - INFO - Parameters: {'estimator__class_weight': 'balanced', 'estimator__max_depth': 10, 'estimator__min_samples_split': 10, 'estimator__n_estimators': 500}
+2025-02-21 19:52:56,494 - utils - INFO - Mean Test Score: 0.15104166666666669
+2025-02-21 19:52:56,494 - utils - INFO - Rank: 22
+2025-02-21 19:52:56,494 - utils - INFO - Parameters: {'estimator__class_weight': 'balanced', 'estimator__max_depth': 10, 'estimator__min_samples_split': 10, 'estimator__n_estimators': 1000}
+2025-02-21 19:52:56,494 - utils - INFO - Mean Test Score: 0.1515625
+2025-02-21 19:52:56,494 - utils - INFO - Rank: 21
+2025-02-21 19:52:56,494 - model_manager - INFO - Results for Random Forest: {'accuracy': 0.19375, 'precision_micro': 0.7062937062937062, 'precision_macro': 0.6164406551743034, 'recall_micro': 0.30513595166163143, 'recall_macro': 0.23549378016064254, 'f1_micro': 0.42616033755274263, 'f1_macro': 0.33110419437213634}
+2025-02-21 19:52:56,495 - model_manager - INFO - 
+=== Training Naive Bayes ===
+2025-02-21 19:52:57,104 - utils - INFO - 
+Grid Search Results:
+2025-02-21 19:52:57,104 - utils - INFO - Parameters: {'estimator__alpha': 0.14, 'estimator__fit_prior': True}
+2025-02-21 19:52:57,104 - utils - INFO - Mean Test Score: 0.265625
+2025-02-21 19:52:57,105 - utils - INFO - Rank: 4
+2025-02-21 19:52:57,105 - utils - INFO - Parameters: {'estimator__alpha': 0.14, 'estimator__fit_prior': False}
+2025-02-21 19:52:57,105 - utils - INFO - Mean Test Score: 0.10520833333333335
+2025-02-21 19:52:57,105 - utils - INFO - Rank: 7
+2025-02-21 19:52:57,106 - utils - INFO - Parameters: {'estimator__alpha': 0.145, 'estimator__fit_prior': True}
+2025-02-21 19:52:57,106 - utils - INFO - Mean Test Score: 0.26979166666666665
+2025-02-21 19:52:57,106 - utils - INFO - Rank: 3
+2025-02-21 19:52:57,106 - utils - INFO - Parameters: {'estimator__alpha': 0.145, 'estimator__fit_prior': False}
+2025-02-21 19:52:57,107 - utils - INFO - Mean Test Score: 0.10520833333333335
+2025-02-21 19:52:57,107 - utils - INFO - Rank: 7
+2025-02-21 19:52:57,107 - utils - INFO - Parameters: {'estimator__alpha': 0.155, 'estimator__fit_prior': True}
+2025-02-21 19:52:57,107 - utils - INFO - Mean Test Score: 0.27499999999999997
+2025-02-21 19:52:57,107 - utils - INFO - Rank: 2
+2025-02-21 19:52:57,108 - utils - INFO - Parameters: {'estimator__alpha': 0.155, 'estimator__fit_prior': False}
+2025-02-21 19:52:57,108 - utils - INFO - Mean Test Score: 0.10729166666666665
+2025-02-21 19:52:57,108 - utils - INFO - Rank: 5
+2025-02-21 19:52:57,108 - utils - INFO - Parameters: {'estimator__alpha': 0.16, 'estimator__fit_prior': True}
+2025-02-21 19:52:57,108 - utils - INFO - Mean Test Score: 0.27760416666666665
+2025-02-21 19:52:57,108 - utils - INFO - Rank: 1
+2025-02-21 19:52:57,109 - utils - INFO - Parameters: {'estimator__alpha': 0.16, 'estimator__fit_prior': False}
+2025-02-21 19:52:57,109 - utils - INFO - Mean Test Score: 0.10729166666666665
+2025-02-21 19:52:57,109 - utils - INFO - Rank: 5
+2025-02-21 19:52:57,109 - model_manager - INFO - Results for Naive Bayes: {'accuracy': 0.3229166666666667, 'precision_micro': 0.7486338797814208, 'precision_macro': 0.7011344199742855, 'recall_micro': 0.41389728096676737, 'recall_macro': 0.30109846155441394, 'f1_micro': 0.5330739299610895, 'f1_macro': 0.40160636969053554}
+2025-02-21 19:52:57,117 - model_persistence - INFO - Saving model components...
+2025-02-21 19:52:57,256 - model_persistence - INFO - Model components saved successfully
+2025-02-21 19:52:57,257 - __main__ - INFO - 
+Final Model Comparison:
+2025-02-21 19:52:57,258 - __main__ - INFO -                      accuracy  precision_micro  precision_macro  recall_micro  recall_macro  f1_micro  f1_macro
+SVM                  0.335417         0.656805         0.601750      0.503021      0.380569  0.569718  0.451712
+Naive Bayes          0.322917         0.748634         0.701134      0.413897      0.301098  0.533074  0.401606
+Linear SVC           0.308333         0.640496         0.595256      0.468278      0.370386  0.541012  0.445164
+Logistic Regression  0.302083         0.603053         0.549992      0.477341      0.386999  0.532884  0.441439
+Random Forest        0.193750         0.706294         0.616441      0.305136      0.235494  0.426160  0.331104
+2025-02-21 19:52:57,272 - __main__ - INFO - 
+Best performing model: SVM

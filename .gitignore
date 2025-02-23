@@ -11,8 +11,6 @@ Archive
 dbconfig.ini
 CreateCloudSQLdb.sql
 NewUser.sql
-logs
-predictions
-feeds
+
 
 

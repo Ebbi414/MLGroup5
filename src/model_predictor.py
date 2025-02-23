@@ -92,20 +92,15 @@ def main():
         # Create predictions directory if it doesn't exist
         os.makedirs('predictions', exist_ok=True)
 
-        # Get the latest feeds file
-        feeds_file = get_latest_feeds_file()
-        logger.info(f"Using feed file: {feeds_file}")
+        # Get all feed files in the feeds directory
+        feed_files = [f for f in os.listdir('feeds') if f.startswith(
+            'feeds_') and f.endswith('.json')]
+        logger.info(f"Found {len(feed_files)} feed files to process")
 
-        # Extract the timestamp part for naming the output file
-        match = re.search(r'feeds_(\d+_\d+)\.json', feeds_file)
-        if not match:
-            error_msg = f"Could not extract timestamp from filename: {feeds_file}"
+        if not feed_files:
+            error_msg = "No feed files found in the 'feeds' directory"
             logger.error(error_msg)
-            raise ValueError(error_msg)
-
-        timestamp = match.group(1)
-        output_filename = f"feeds_{timestamp}_predicted.json"
-        output_path = os.path.join('predictions', output_filename)
+            raise FileNotFoundError(error_msg)
 
         # Initialize text preprocessor
         logger.info("Initializing text preprocessor...")
@@ -122,27 +117,58 @@ def main():
             logger.error(f"Failed to load model components: {str(e)}")
             raise
 
-        # Load feed data
-        logger.info(f"Loading feed data from {feeds_file}...")
-        with open(feeds_file, 'r', encoding='utf-8') as f:
-            feeds = json.load(f)
-        logger.info(f"Loaded {len(feeds)} feed entries")
+        # Process each feed file
+        for feeds_file in feed_files:
+            try:
+                feeds_path = os.path.join('feeds', feeds_file)
+                logger.info(f"Processing feed file: {feeds_path}")
 
-        # Predict topics
-        predicted_feeds = predict_topics(
-            feeds, categories, vectorizer, best_model, preprocessor)
-        logger.info(
-            f"Generated predictions for {len(predicted_feeds)} feed entries")
+                # Extract the timestamp part for naming the output file
+                match = re.search(r'feeds_(\d+_\d+)\.json', feeds_file)
+                if not match:
+                    logger.warning(
+                        f"Could not extract timestamp from filename: {feeds_file}, skipping...")
+                    continue
 
-        # Save to output file
-        logger.info(f"Saving predictions to {output_path}...")
-        with open(output_path, 'w', encoding='utf-8') as f:
-            json.dump(predicted_feeds, f, indent=2, ensure_ascii=False)
+                timestamp = match.group(1)
+                output_filename = f"feeds_{timestamp}_predicted.json"
+                output_path = os.path.join('predictions', output_filename)
 
-        logger.info(f"Successfully saved predictions to {output_path}")
+                # Skip if prediction file already exists
+                if os.path.exists(output_path):
+                    logger.info(
+                        f"Prediction file {output_path} already exists, skipping...")
+                    continue
+
+                # Load feed data
+                logger.info(f"Loading feed data from {feeds_path}...")
+                with open(feeds_path, 'r', encoding='utf-8') as f:
+                    feeds = json.load(f)
+                logger.info(f"Loaded {len(feeds)} feed entries")
+
+                # Predict topics
+                predicted_feeds = predict_topics(
+                    feeds, categories, vectorizer, best_model, preprocessor)
+                logger.info(
+                    f"Generated predictions for {len(predicted_feeds)} feed entries")
+
+                # Save to output file
+                logger.info(f"Saving predictions to {output_path}...")
+                with open(output_path, 'w', encoding='utf-8') as f:
+                    json.dump(predicted_feeds, f, indent=2, ensure_ascii=False)
+
+                logger.info(f"Successfully saved predictions to {output_path}")
+
+            except Exception as e:
+                logger.error(f"Error processing file {feeds_file}: {str(e)}")
+                # Continue to next file instead of stopping completely
+                continue
+
+        logger.info("Completed processing all feed files")
 
     except Exception as e:
-        logger.error(f"Error occurred: {str(e)}", exc_info=True)
+        logger.error(
+            f"Error occurred in main process: {str(e)}", exc_info=True)
         raise
 
 

@@ -22,41 +22,41 @@ MODEL_CONFIGS = {
     "Logistic Regression": {
         "estimator": LogisticRegression(max_iter=1000),
         "param_grid": {
-            "C": [10.0, 20, 50],
-            "penalty": ["l1", "l2"],
+            "C": [25, 30, 40, 60, 100],
+            "penalty": ["l1"],
             "solver": ["liblinear"],
         }
     },
     "Linear SVC": {
         "estimator": LinearSVC(max_iter=1000),
         "param_grid": {
-            "C": [1, 10.0, 100],
+            "C": [15, 20, 50],
             "loss": ["squared_hinge"],
-            "penalty": ["l1", "l2"],
+            "penalty": ["l1"],
             "dual": [False]
         }
     },
     "SVM": {
         "estimator": SVC(probability=True),
         "param_grid": {
-            "C": [0.5, 1.0, 10.0],
-            "kernel": ["linear", "rbf"],
-            "class_weight": [None, "balanced"]
+            "C": [0.1, 0.25, 0.75, 1],
+            "kernel": ["linear"],
+            "class_weight": ["balanced"]
         }
     },
     "Random Forest": {
         "estimator": RandomForestClassifier(random_state=42),
         "param_grid": {
-            "n_estimators": [200, 300],
-            "max_depth": [None, 10, 20],
-            "min_samples_split": [2, 5],
-            "class_weight": [None, "balanced"]
+            "n_estimators": [100, 300, 400, 500, 1000],
+            "max_depth": [None, 10],
+            "min_samples_split": [3, 5, 7, 10],
+            "class_weight": ["balanced"]
         }
     },
     "Naive Bayes": {
         "estimator": MultinomialNB(),
         "param_grid": {
-            "alpha": [0.05, 0.1, 0.15],
+            "alpha": [0.14, 0.145, 0.155, 0.16],
             "fit_prior": [True, False]
         }
     }
