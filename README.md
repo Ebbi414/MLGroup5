@@ -13,7 +13,7 @@ This repository contains a machine learning pipeline for predicting news topics 
 The system fetches RSS feeds, processes the text, trains and selects the best model, predicts news topics,
 stores the data in an SQL database, and visualizes the results using Streamlit.
 
-## Code Structure
+## Code Categories
 
 ```
 ├── src
