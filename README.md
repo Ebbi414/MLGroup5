@@ -87,13 +87,12 @@ stores the data in an SQL database, and visualizes the results using Streamlit.
 
 4. **Set up the database**
 
-   - dbconfig.ini file should be added containing the following data \
-     dbconfig.ini
+   - dbconfig.ini file should be added into src folder, containing the following data \
 
    ```sh
    [DATABASE]
-       server = \<SQL Server Name>
-       database = \<Database name>
+   server = \<SQL Server Name>
+   database = \<Database name>
    username = \<Username>
    password = \<Password>
    driver = ODBC Driver 17 for SQL Server
