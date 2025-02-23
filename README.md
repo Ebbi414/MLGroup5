@@ -1,10 +1,20 @@
+# BK24TR Machine Learning - Assignment 3
+
+├── **Group 5**
+│ ├── Agne Dimsaite
+│ ├── Ebrahim Amani
+│ ├── Johan Mo
+│ ├── Razan Kamal Taha Mohamed
+│ ├── Therese Woods
+
 # News Topic Prediction Pipeline
 
-This repository contains a machine learning pipeline for predicting news topics from RSS feeds. 
-The system fetches RSS feeds, processes the text, trains and selects the best model, predicts news topics, 
+This repository contains a machine learning pipeline for predicting news topics from RSS feeds.
+The system fetches RSS feeds, processes the text, trains and selects the best model, predicts news topics,
 stores the data in an SQL database, and visualizes the results using Streamlit.
 
 ## Code Structure
+
 ```
 ├── src
 │   ├── data_feeder.py
@@ -76,13 +86,14 @@ stores the data in an SQL database, and visualizes the results using Streamlit.
    ```
 
 4. **Set up the database**
+
    - dbconfig.ini file should be added containing the following data \
-        [DATABASE]
-        server = \<SQL Server Name>
-        database = \<Database name>
-        username = \<Username>
-        password = \<Password>
-    driver = ODBC Driver 17 for SQL Server 
+      [DATABASE]
+     server = \<SQL Server Name>
+     database = \<Database name>
+     username = \<Username>
+     password = \<Password>
+     driver = ODBC Driver 17 for SQL Server
 
    - Modify `dbconfig.ini` with the correct database credentials.
    - Run `SQLConnectionTest.py` to verify the connection.
@@ -101,10 +112,3 @@ stores the data in an SQL database, and visualizes the results using Streamlit.
    ```sh
    streamlit run src/streamlitUI.py
    ```
-
-
-
-
-
-
-
