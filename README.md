@@ -88,12 +88,16 @@ stores the data in an SQL database, and visualizes the results using Streamlit.
 4. **Set up the database**
 
    - dbconfig.ini file should be added containing the following data \
-      [DATABASE]
-     server = \<SQL Server Name>
-     database = \<Database name>
-     username = \<Username>
-     password = \<Password>
-     driver = ODBC Driver 17 for SQL Server
+     dbconfig.ini
+
+   ```sh
+   [DATABASE]
+       server = \<SQL Server Name>
+       database = \<Database name>
+   username = \<Username>
+   password = \<Password>
+   driver = ODBC Driver 17 for SQL Server
+   ```
 
    - Modify `dbconfig.ini` with the correct database credentials.
    - Run `SQLConnectionTest.py` to verify the connection.
