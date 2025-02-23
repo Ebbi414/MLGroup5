@@ -87,14 +87,14 @@ stores the data in an SQL database, and visualizes the results using Streamlit.
 
 4. **Set up the database**
 
-   - dbconfig.ini file should be added into src folder, containing the following data \
+   - dbconfig.ini file should be added into src folder, containing the following data
 
    ```sh
    [DATABASE]
-   server = \<SQL Server Name>
-   database = \<Database name>
-   username = \<Username>
-   password = \<Password>
+   server = <SQL Server Name>
+   database = <Database name>
+   username = <Username>
+   password = <Password>
    driver = ODBC Driver 17 for SQL Server
    ```
 
@@ -103,11 +103,20 @@ stores the data in an SQL database, and visualizes the results using Streamlit.
 
 5. **Run the pipeline**
 
+   - Change directory to src folder:
+
    ```sh
-   python src/data_feeder.py
-   python src/best_model_finder/model_manager.py
-   python src/model_predictor.py
-   python src/sql_data_seeder.py
+   cd src
+   ```
+
+   - Run the following files:  
+     Note: If you don't want to rerun the ML traning model, just skip the optional line
+
+   ```sh
+   python data_feeder.py
+   [Optional] python best_model_finder.py
+   python model_predictor.py
+   python sql_data_seeder.py
    ```
 
 6. **Run the Streamlit UI**
