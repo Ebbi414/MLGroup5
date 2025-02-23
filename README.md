@@ -122,5 +122,5 @@ stores the data in an SQL database, and visualizes the results using Streamlit.
 6. **Run the Streamlit UI**
 
    ```sh
-   streamlit run src/streamlitUI.py
+   streamlit run streamlitUI.py
    ```
