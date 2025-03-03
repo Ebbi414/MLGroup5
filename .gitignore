@@ -9,11 +9,16 @@ Inlämning2JohanMo.ipynb
 inlämning2test.ipynb
 Archive
 dbconfig.ini
+config.ini
 CreateCloudSQLdb.sql
 NewUser.sql
+<<<<<<< HEAD
 logs
 predictions
 feeds
 Agne
+=======
+
+>>>>>>> b5758826cfca03e01f1ffad734ce97e91ce631c0
 
 

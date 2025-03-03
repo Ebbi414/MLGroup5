@@ -1,3 +1,12 @@
+''' 
+# BK24TR Machine Learning - Assignment 3
+├── **Group 5**
+│ ├── Agne Dimsaite
+│ ├── Ebrahim Amani
+│ ├── Johan Mo
+│ ├── Razan Kamal Taha Mohamed
+│ ├── Therese Woods
+'''
 from rss_feed_saver import RSSFeedSaver  # Import the RSSFeedSaver class
 from rss_feed_parser import RSSFeedParser
 import sys

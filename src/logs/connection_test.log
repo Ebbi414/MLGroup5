@@ -1,0 +1,41 @@
+2025-02-20 23:34:50,389 - __main__ - INFO - Testing database connection...
+2025-02-20 23:34:50,390 - db_connection - ERROR - Configuration file not found: dbconfig.ini
+2025-02-20 23:34:50,391 - __main__ - ERROR - Connection test failed: Configuration file not found: dbconfig.ini
+Traceback (most recent call last):
+  File "C:\DIAD\ML\Tasks\MLGroup5\src\SQLConnectionTest.py", line 18, in main
+    with SqlConnectionHandler() as db_conn:
+  File "C:\DIAD\ML\Tasks\MLGroup5\src\db_connection.py", line 21, in __init__
+    self.config = self._load_config(config_path)
+  File "C:\DIAD\ML\Tasks\MLGroup5\src\db_connection.py", line 29, in _load_config
+    raise FileNotFoundError(
+FileNotFoundError: Configuration file not found: dbconfig.ini
+2025-02-20 23:36:08,069 - __main__ - INFO - Testing database connection...
+2025-02-20 23:36:08,200 - db_connection - INFO - Successfully connected to the database!
+2025-02-20 23:36:08,203 - __main__ - INFO - Successfully connected to: Microsoft SQL Server 2022 (RTM-GDR) (KB5046861) - 16.0.1135.2 (X64) 
+	Oct 18 2024 15:31:58 
+	Copyright (C) 2022 Microsoft Corporation
+	Developer Edition (64-bit) on Windows 10 Enterprise 10.0 <X64> (Build 26100: ) (Hypervisor)
+
+2025-02-20 23:36:08,239 - __main__ - INFO - rssnews table exists: True
+2025-02-20 23:36:08,240 - __main__ - INFO - All tests completed successfully!
+2025-02-20 23:36:08,241 - db_connection - INFO - Database connection closed.
+2025-02-21 20:11:08,429 - __main__ - INFO - Testing database connection...
+2025-02-21 20:11:08,533 - db_connection - INFO - Successfully connected to the database!
+2025-02-21 20:11:08,535 - __main__ - INFO - Successfully connected to: Microsoft SQL Server 2022 (RTM-GDR) (KB5046861) - 16.0.1135.2 (X64) 
+	Oct 18 2024 15:31:58 
+	Copyright (C) 2022 Microsoft Corporation
+	Developer Edition (64-bit) on Windows 10 Enterprise 10.0 <X64> (Build 26100: ) (Hypervisor)
+
+2025-02-21 20:11:08,542 - __main__ - INFO - rssnews table exists: True
+2025-02-21 20:11:08,543 - __main__ - INFO - All tests completed successfully!
+2025-02-21 20:11:08,544 - db_connection - INFO - Database connection closed.
+2025-02-23 17:04:56,246 - __main__ - INFO - Testing database connection...
+2025-02-23 17:04:56,353 - db_connection - INFO - Successfully connected to the database!
+2025-02-23 17:04:56,355 - __main__ - INFO - Successfully connected to: Microsoft SQL Server 2022 (RTM-GDR) (KB5046861) - 16.0.1135.2 (X64) 
+	Oct 18 2024 15:31:58 
+	Copyright (C) 2022 Microsoft Corporation
+	Developer Edition (64-bit) on Windows 10 Enterprise 10.0 <X64> (Build 26100: ) (Hypervisor)
+
+2025-02-23 17:04:56,370 - __main__ - INFO - rssnews table exists: True
+2025-02-23 17:04:56,371 - __main__ - INFO - All tests completed successfully!
+2025-02-23 17:04:56,372 - db_connection - INFO - Database connection closed.
